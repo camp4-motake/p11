@@ -3,6 +3,9 @@ module.exports = function (/* eleventyConfig */) {
     dir: {
       input: `${process.env.npm_package_config_input}views`,
       output: process.env.npm_package_config_intermediate,
+      includes: "../components",
+      layouts: "../layouts",
+      data: "../_data",
     },
   }
 }

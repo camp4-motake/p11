@@ -105,7 +105,7 @@
     "disable": false,
     "silent": true,
     "rules": {
-      "(.*).(css|js|webp|avif|png|jpg|svg|json)": "assets/$1.{hash}.$2"
+      "(.*).(css|js|webp|avif|png|jpg|gif|svg|json)": "assets/$1.{hash}.$2"
     }
   }
 }
