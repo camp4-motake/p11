@@ -1,4 +1,5 @@
-import { message } from "./scripts/message"
-console.log("Message:", message)
+// import intersect from "@alpinejs/intersect"
+import Alpine from "alpinejs"
 
-// document.body.style.backgroundColor = 'tomato'
+window.Alpine = Alpine
+Alpine.start()
