@@ -28,6 +28,7 @@
     "concurrently": "^8.2.2",
     "delay-cli": "^2.0.0",
     "parcel": "^2.10.3",
+    "parcel-namer-rewrite": "^2.10.3-rc.2",
     "rimraf": "^5.0.5",
     "sharp": "^0.31.3",
     "zx": "^7.2.3"
@@ -96,6 +97,14 @@
     "drafts": {
       "nesting": true,
       "customMedia": true
+    }
+  },
+  "parcel-namer-rewrite": {
+    "chain": "@parcel/namer-default",
+    "hashing": "always",
+    "disable": false,
+    "rules": {
+      "(.*).(css|js|webp|avif|png|jpg|svg|json)": "assets/$1.{hash}.$2"
     }
   }
 }
