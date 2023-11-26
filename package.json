@@ -12,8 +12,8 @@
     "> 0.5% in JP and last 2 years and not dead"
   ],
   "scripts": {
-    "build": "zx ./build.mjs",
     "dev": "zx ./build.mjs --watch",
+    "build": "tsc && zx ./build.mjs",
     "lintFix": "prettier --write --list-different . && concurrently --raw npm:lintFix:*",
     "lintFix:styles": "stylelint \"src/**/*.css\" --fix",
     "lintFix:scripts": "eslint --ignore-path .gitignore --ext .js,.jsx,.cjs,.mjs,.ts,.tsx . --fix"
