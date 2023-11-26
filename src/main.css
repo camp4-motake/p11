@@ -1,3 +1,5 @@
+@import "config/**/*.css";
+
 body {
   padding: 64px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

@@ -9,7 +9,7 @@ process.env.FORCE_COLOR = "1"
 await $`rimraf ${tmpDir} ${outDir}`
 
 if (argv.watch) {
-  await $`concurrently 'npx @11ty/eleventy --watch' 'delay 1 && parcel "./${tmpDir}**/*.html" --dist-dir ${outDir} --no-cache'`
+  await $`concurrently 'npx @11ty/eleventy --watch' 'parcel "./${tmpDir}**/*.html" --dist-dir ${outDir} --no-cache'`
 } else {
   await $`npx @11ty/eleventy`
   await $`parcel build './${tmpDir}**/*.html' --dist-dir ${outDir} --no-cache --no-source-maps`
