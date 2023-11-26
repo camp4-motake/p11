@@ -1,0 +1,42 @@
+{
+	"files.exclude": {
+		".cache": true,
+		".tmp": true,
+		".parcel-cache": true,
+		"node_modules": true,
+		"package-lock.json": true,
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	},
+	"files.associations": {
+		"*.css": "postcss",
+		"*.njk": "html"
+	},
+	"emmet.includeLanguages": {
+		"njk": "html",
+		"postcss": "css"
+	},
+	"css.validate": false,
+	"postcss.validate": false,
+	"html.format.templating": true,
+	"html.format.indentInnerHtml": false,
+	"html.format.extraLiners": "",
+	"html.format.unformatted": "wbr,script,style,noscript",
+	"html.format.contentUnformatted": "pre,code,textarea,svg",
+	"html.format.wrapLineLength": 0,
+	"html.format.maxPreserveNewLines": 1,
+	"html.format.unformattedContentDelimiter": "---",
+	"[json]": {
+		"editor.formatOnSave": false,
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"stylelint.validate": [
+		"css",
+		"postcss"
+	],
+	"cSpell.words": []
+}

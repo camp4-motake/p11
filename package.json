@@ -1,0 +1,34 @@
+{
+  "name": "p11",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "config": {
+    "input": "src/",
+    "intermediate": ".tmp/",
+    "output": "dist/"
+  },
+  "browserslist": [
+    "> 0.5% in JP and last 2 years and not dead"
+  ],
+  "scripts": {
+    "build": "zx ./build.mjs",
+    "dev": "zx ./build.mjs --watch"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "parcel": "^2.10.3",
+    "rimraf": "^5.0.5",
+    "sharp": "^0.31.3",
+    "zx": "^7.2.3"
+  },
+  "@parcel/transformer-css": {
+    "drafts": {
+      "nesting": true,
+      "customMedia": true
+    }
+  }
+}

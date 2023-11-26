@@ -1,0 +1,17 @@
+---
+title: Home
+permalink: index.html
+layout: layouts/base.njk
+---
+
+This is the home page.
+
+<h3>Pages</h3>
+
+{%- for entry in collections.all %}
+<li><a href="{{ entry.url | url }}">{{ entry.url }}</a></li>
+{%- endfor %}
+
+<img src="~/src/images/test300x300.png?as=webp" alt="">
+
+test
