@@ -1,4 +1,6 @@
-# P11 - Parcel 11ty Static Starter
+# P11
+
+Parcel 11ty Static Starter
 
 ```sh
 # dev -> http://localhost:1234
