@@ -1,10 +1,8 @@
-module.exports = function (eleventyConfig) {
-  const { npm_package_config_intermediate, npm_package_config_input } =
-    process.env;
+module.exports = function (/* eleventyConfig */) {
   return {
     dir: {
-      input: `${npm_package_config_input}views`,
-      output: npm_package_config_intermediate,
+      input: `${process.env.npm_package_config_input}views`,
+      output: process.env.npm_package_config_intermediate,
     },
-  };
-};
+  }
+}
