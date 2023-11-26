@@ -42,6 +42,56 @@
     "stylelint-config-recess-order": "4.4.0",
     "stylelint-config-recommended": "13.0.0"
   },
+  "prettier": {
+    "semi": false
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 13
+    },
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "env": {
+      "node": true,
+      "browser": true,
+      "es2022": true
+    },
+    "rules": {
+      "no-unused-vars": "warn"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "extends": [
+          "plugin:@typescript-eslint/recommended"
+        ],
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "sourceType": "module"
+        },
+        "rules": {}
+      }
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-recess-order"
+    ],
+    "rules": {
+      "no-descending-specificity": null
+    }
+  },
   "@parcel/transformer-css": {
     "drafts": {
       "nesting": true,
