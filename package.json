@@ -17,8 +17,7 @@
   "scripts": {
     "dev": "zx ./build.mjs --watch",
     "build": "tsc --noEmit && zx ./build.mjs",
-    "lintFix": "prettier --write --list-different . && stylelint \"src/**/*.css\" --fix && eslint --ignore-path .gitignore . --fix",
-    "delay": "node -e \"require('node:timers/promises').setTimeout(1_000)\""
+    "lintFix": "prettier --write --list-different . && stylelint \"src/**/*.css\" --fix && eslint --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "alpinejs": "^3.13.3"
