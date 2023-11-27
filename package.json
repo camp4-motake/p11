@@ -16,10 +16,9 @@
   ],
   "scripts": {
     "dev": "zx ./build.mjs --watch",
-    "build": "tsc && zx ./build.mjs",
-    "lintFix": "prettier --write --list-different . && concurrently --raw npm:lintFix:*",
-    "lintFix:styles": "stylelint \"src/**/*.css\" --fix",
-    "lintFix:scripts": "eslint --ignore-path .gitignore --ext .js,.jsx,.cjs,.mjs,.ts,.tsx . --fix"
+    "build": "tsc --noEmit && zx ./build.mjs",
+    "lintFix": "prettier --write --list-different . && stylelint \"src/**/*.css\" --fix && eslint --ignore-path .gitignore . --fix",
+    "timeout": "node -e \"require('node:timers/promises').setTimeout(1_000)\""
   },
   "dependencies": {
     "alpinejs": "^3.13.3"
