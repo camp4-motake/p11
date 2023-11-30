@@ -4,6 +4,10 @@
   "transformers": {
     "@parcel/transformer-postcss": []
   },
+  "resolvers": [
+    "@parcel/resolver-glob",
+    "..."
+  ],
   "namers": [
     "parcel-namer-rewrite"
   ]
