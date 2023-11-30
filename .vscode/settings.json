@@ -30,9 +30,14 @@
   "html.format.wrapLineLength": 0,
   "html.format.maxPreserveNewLines": 1,
   "html.format.unformattedContentDelimiter": "---",
+  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
+  "stylelint.validate": ["css", "postcss"],
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "stylelint.validate": ["css", "postcss"],
-  "cSpell.words": []
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  }
 }
