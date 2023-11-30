@@ -26,25 +26,26 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@parcel/resolver-glob": "^2.10.3",
     "@types/alpinejs": "^3.13.5",
     "@types/node": "^20.10.0",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
     "concurrently": "^8.2.2",
-    "eslint": "8.54.0",
-    "eslint-config-prettier": "9.0.0",
     "parcel": "^2.10.3",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
     "postcss": "^8.4.31",
     "postcss-easy-import": "^4.0.0",
-    "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
     "sharp": "^0.31.3",
+    "zx": "^7.2.3"
+  },
+  "optionalDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "8.54.0",
+    "eslint-config-prettier": "9.0.0",
+    "prettier": "^3.1.0",
     "stylelint": "15.11.0",
     "stylelint-config-recess-order": "4.4.0",
-    "stylelint-config-recommended": "13.0.0",
-    "zx": "^7.2.3"
+    "stylelint-config-recommended": "13.0.0"
   },
   "@parcel/transformer-css": {
     "drafts": {
@@ -58,7 +59,7 @@
     "disable": false,
     "silent": true,
     "rules": {
-      "(.*).(css|js|webp|avif|png|jpg|gif|svg|json)": "assets/$1{.hash}.$2"
+      "(.*).(css|js|webp|avif|png|jpg|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   }
 }
