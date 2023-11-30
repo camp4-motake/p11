@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.13.3",
-    "alpinejs": "^3.13.3"
+    "alpinejs": "^3.13.3",
+    "ress": "^5.0.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
