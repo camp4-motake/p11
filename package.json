@@ -12,6 +12,9 @@
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache'",
     "build": "tsc --noEmit && npx @11ty/eleventy && parcel build './.tmp/**/*.html' --dist-dir dist/ --no-cache --no-source-maps",
+    "predev": "npm run clean --silent",
+    "prebuild": "npm run clean --silent",
+    "clean": "rimraf dist/* .tmp/*",
     "lintFix": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint --ignore-path .gitignore . --fix"
   },
   "dependencies": {
