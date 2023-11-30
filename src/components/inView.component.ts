@@ -12,18 +12,18 @@
 import Alpine from "alpinejs"
 
 Alpine.data("inView", (...args: unknown[]) => ({
-  isRepeat: args[0] === true,
+  isRepeat: args[0] === "true",
 
   trigger: {
-    ["x-init"](): void {
+    ["x-init"]() {
       this.$el.dataset.scroll = "out"
     },
 
-    ["x-intersect:enter"](): void {
+    ["x-intersect:enter"]() {
       this.$el.dataset.scroll = "in"
     },
 
-    ["x-intersect:leave"](): void {
+    ["x-intersect:leave"]() {
       if (!this.isRepeat) return
       if (!this.isReverse()) return
       this.$el.dataset.scroll = "out"
