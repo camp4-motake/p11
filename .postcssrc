@@ -1,6 +1,5 @@
 {
   "plugins": {
-    "postcss-url": true,
-    "postcss-easy-import": {}
+    "postcss-easy-import": true
   }
 }

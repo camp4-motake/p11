@@ -20,6 +20,7 @@
     "lintFix": "prettier --write --list-different . && stylelint \"src/**/*.css\" --fix && eslint --ignore-path .gitignore . --fix"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.13.3",
     "alpinejs": "^3.13.3"
   },
   "devDependencies": {
@@ -36,7 +37,6 @@
     "parcel-namer-rewrite": "^2.10.3-rc.2",
     "postcss": "^8.4.31",
     "postcss-easy-import": "^4.0.0",
-    "postcss-url": "^10.1.3",
     "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
     "sharp": "^0.31.3",
