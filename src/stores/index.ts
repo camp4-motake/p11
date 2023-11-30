@@ -1,4 +1,5 @@
-export async function stores() {
-  const modules = await import("./**/*.store.ts")
-  await Promise.all(Object.values(modules).map((mod) => mod()))
+import modules from "./**/*.store.ts"
+
+export const stores = async () => {
+  await Promise.all(Object.values(modules).map((mod) => mod.default()))
 }

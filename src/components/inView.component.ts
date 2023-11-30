@@ -11,26 +11,26 @@
 
 import Alpine from "alpinejs"
 
-Alpine.data("inView", (...args: unknown[]) => ({
-  isRepeat: args[0] === "true",
+export default () => {
+  Alpine.data("inView", (...args: unknown[]) => ({
+    isRepeat: args[0] === "true",
 
-  trigger: {
-    ["x-init"]() {
-      this.$el.dataset.scroll = "out"
+    trigger: {
+      ["x-init"]() {
+        this.$el.dataset.scroll = "out"
+      },
+      ["x-intersect:enter"]() {
+        this.$el.dataset.scroll = "in"
+      },
+      ["x-intersect:leave"]() {
+        if (!this.isRepeat) return
+        if (!this.isReverse()) return
+        this.$el.dataset.scroll = "out"
+      },
     },
 
-    ["x-intersect:enter"]() {
-      this.$el.dataset.scroll = "in"
+    isReverse() {
+      return Math.sign(this.$el.getBoundingClientRect().top) === 1
     },
-
-    ["x-intersect:leave"]() {
-      if (!this.isRepeat) return
-      if (!this.isReverse()) return
-      this.$el.dataset.scroll = "out"
-    },
-  },
-
-  isReverse() {
-    return Math.sign(this.$el.getBoundingClientRect().top) === 1
-  },
-}))
+  }))
+}
