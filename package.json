@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache'",
-    "build": "tsc --noEmit && npx @11ty/eleventy && parcel build './.tmp/**/*.html' --dist-dir dist/ --no-cache --no-source-maps",
+    "build": "tsc --noEmit && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
     "predev": "npm run clean -s",
     "prebuild": "npm run clean -s",
     "clean": "rimraf dist/* .tmp/*",
@@ -57,7 +57,7 @@
     "disable": false,
     "silent": true,
     "rules": {
-      "(.*).(css|js|webp|avif|png|jpg|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
+      "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   }
 }
