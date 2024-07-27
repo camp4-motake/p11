@@ -3,7 +3,6 @@
     ".cache": true,
     ".tmp": true,
     ".parcel-cache": true,
-    "node_modules": true,
     "package-lock.json": true
   },
   "editor.formatOnSave": true,
@@ -33,7 +32,10 @@
   "alpine-intellisense.settings.languageScopes": "html,nunjucks",
   "stylelint.validate": ["css", "postcss"],
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.codeActionsOnSave": {

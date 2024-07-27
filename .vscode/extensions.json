@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "ginfuru.better-nunjucks",
     "pcbowers.alpine-intellisense",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "vunguyentuan.vscode-postcss"
   ]
 }
