@@ -12,4 +12,6 @@ This is the home page.
 <li><a href="{{ entry.url | url }}">{{ entry.url }}</a></li>
 {%- endfor %}
 
-<img src="/src/images/test300x300.png?as=webp" alt="">
+<img src="/src/images/test300x300.png?as=webp&width=300" alt="">
+
+<div x-data="inView" x-bind="trigger"></div>
