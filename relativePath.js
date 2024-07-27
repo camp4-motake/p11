@@ -28,6 +28,7 @@ async function processHtmlFile(filePath, targetDirectory) {
       targetDirectory,
     )
     await fs.writeFile(filePath, updatedContent, "utf8")
+    // eslint-disable-next-line no-console
     console.log(`Update File: ${filePath}`)
   } catch (err) {
     console.error(`File Processing Error (${filePath}):`, err)
@@ -53,6 +54,7 @@ async function processDirectory(directory, targetDirectory) {
 // メイン処理
 async function main() {
   await processDirectory(targetDirectory, targetDirectory)
+  // eslint-disable-next-line no-console
   console.log("All processing is complete.")
 }
 
