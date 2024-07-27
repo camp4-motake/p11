@@ -3,9 +3,9 @@ module.exports = function (/* eleventyConfig */) {
     dir: {
       input: "src/pages",
       output: ".tmp",
-      includes: "../components",
-      layouts: "../layouts",
-      data: "../data",
+      includes: "_includes",
+      layouts: "_includes/layouts",
+      data: "_data",
     },
   }
 }
