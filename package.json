@@ -16,7 +16,7 @@
     "prebuild": "npm run clean -s",
     "//postbuild": "node relativePath.js",
     "clean": "rimraf dist/* .tmp/*",
-    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint --ignore-pattern .gitignore . --fix"
+    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix"
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.14.1",
