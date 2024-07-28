@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   domain: "recruit.florence.or.jp",
   encoding: "UTF-8",
   lang: "ja",

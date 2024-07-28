@@ -1,7 +1,29 @@
-const path = require("node:path")
-const sizeOf = require("image-size")
+import "tsx/esm"
 
-module.exports = function (eleventyConfig) {
+import path from "node:path"
+
+import sizeOf from "image-size"
+import { renderToStaticMarkup } from "react-dom/server"
+
+export default function (eleventyConfig) {
+  /**
+   * jsx support
+   * @see https://www.11ty.dev/docs/languages/jsx/
+   */
+  eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
+    key: "11ty.js",
+    compile: function () {
+      return async function (data) {
+        let content = await this.defaultRenderer(data)
+        return renderToStaticMarkup(content)
+      }
+    },
+  })
+
+  eleventyConfig.addTransform("tsx", async (content) => {
+    return `<!doctype html>\n${content}`
+  })
+
   /**
    * eleventy dev server
    * @see https://www.11ty.dev/docs/dev-server/
@@ -36,14 +58,11 @@ module.exports = function (eleventyConfig) {
    * custom filter
    * @see https://www.11ty.dev/docs/filters/
    */
-  eleventyConfig.addFilter("urlJoin", function (baseUrl, pathname) {
+  eleventyConfig.addFilter("urlJoin", function (baseUrl = "", pathname = "") {
     return new URL(path.join(baseUrl, pathname)).toString()
   })
   eleventyConfig.addFilter("padStart", function (str = "", length = 2) {
     return String(str).padStart(length, "0")
-  })
-  eleventyConfig.addFilter("objAssign", function (...args) {
-    return Object.assign({}, ...args)
   })
 
   /**

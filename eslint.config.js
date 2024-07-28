@@ -25,10 +25,15 @@ export default [
     },
   },
   {
-    files: ["**/*.js", "**/*.mjs"],
+    files: ["**/*.js", "**/*.mjs", "**/*.jsx"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
   },
   {
@@ -38,7 +43,7 @@ export default [
     },
   },
   {
-    files: ["**/*.ts"],
+    files: ["**/*.ts", "**/*.tsx"],
     plugins: {
       "@typescript-eslint": tsPlugin,
     },
@@ -46,6 +51,9 @@ export default [
       parser: tsParser,
       parserOptions: {
         project: "./tsconfig.json",
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
     rules: {

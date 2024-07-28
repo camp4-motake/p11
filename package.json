@@ -7,9 +7,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
-    "build": "tsc --noEmit && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
-    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix",
+    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet --formats=11ty.jsx,11ty.tsx' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
+    "build": "tsc --noEmit && npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
+    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts,jsx,tsx}' --fix",
     "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean",
     "prebuild": "npm run clean",
@@ -18,21 +18,29 @@
   "dependencies": {
     "@alpinejs/intersect": "^3.14.1",
     "alpinejs": "^3.14.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "ress": "^5.0.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0-alpha.17",
     "@parcel/resolver-glob": "^2.12.0",
     "@types/alpinejs": "^3.13.10",
     "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "concurrently": "^8.2.2",
+    "esbuild-register": "^3.6.0",
     "image-size": "^1.1.1",
+    "jsx-async-runtime": "^0.5.0",
     "parcel": "^2.12.0",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
     "postcss": "^8.4.40",
     "postcss-easy-import": "^4.0.0",
+    "process": "^0.11.10",
     "rimraf": "^6.0.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "tsx": "^4.16.2"
   },
   "peerDependencies": {
     "@eslint/compat": "^1.1.1",
