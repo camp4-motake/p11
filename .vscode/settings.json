@@ -21,20 +21,15 @@
   },
   "css.validate": false,
   "postcss.validate": false,
-  "html.format.templating": true,
-  "html.format.indentInnerHtml": false,
-  "html.format.extraLiners": "",
-  "html.format.unformatted": "wbr,script,style,noscript",
-  "html.format.contentUnformatted": "pre,code,textarea,svg",
-  "html.format.wrapLineLength": 0,
-  "html.format.maxPreserveNewLines": 1,
-  "html.format.unformattedContentDelimiter": "---",
-  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
   "stylelint.validate": ["css", "postcss"],
+  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
