@@ -8,8 +8,9 @@ const __dirname = path.dirname(__filename)
 const targetDirectory = path.join(__dirname, "dist") // 処理したいディレクトリのパスを指定
 
 async function convertToRelativePath(htmlContent, filePath, targetDirectory) {
-  const regex = /(?<=src="|href=")\/(?!\/)[^"']*/g
-  return htmlContent.replace(regex, (match) => {
+  // src と href 属性の変換
+  const srcHrefRegex = /(?<=src="|href=")\/(?!\/)[^"']*/g
+  htmlContent = htmlContent.replace(srcHrefRegex, (match) => {
     const absolutePath = path.join("/", match)
     const relativePath = path.relative(
       path.dirname(filePath),
@@ -17,6 +18,28 @@ async function convertToRelativePath(htmlContent, filePath, targetDirectory) {
     )
     return relativePath.replace(/\\/g, "/")
   })
+
+  // srcset 属性の変換
+  const srcsetRegex = /(?<=srcset=")([^"]*)/g
+  htmlContent = htmlContent.replace(srcsetRegex, (match) => {
+    return match
+      .split(",")
+      .map((src) => {
+        const [url, size] = src.trim().split(/\s+/)
+        if (url.startsWith("/")) {
+          const absolutePath = path.join("/", url)
+          const relativePath = path.relative(
+            path.dirname(filePath),
+            path.join(targetDirectory, absolutePath),
+          )
+          return `${relativePath.replace(/\\/g, "/")}${size ? " " + size : ""}`
+        }
+        return src
+      })
+      .join(", ")
+  })
+
+  return htmlContent
 }
 
 async function processHtmlFile(filePath, targetDirectory) {
