@@ -15,8 +15,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
-    "jsx": "react",
-    "jsxImportSource": "jsx-async-runtime"
+    "jsx": "react"
   },
   "include": ["src"]
 }
