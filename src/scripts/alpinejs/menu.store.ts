@@ -1,3 +1,12 @@
 import Alpine from "alpinejs"
 
-Alpine.store("menu", { open: false })
+const name = "menu"
+const store = { shown: false }
+
+Alpine.store(name, store)
+
+declare module "alpinejs" {
+  interface Stores {
+    [name]: typeof store
+  }
+}

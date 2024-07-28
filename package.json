@@ -12,11 +12,11 @@
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache'",
     "build": "tsc --noEmit && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
+    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix",
+    "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean -s",
     "prebuild": "npm run clean -s",
-    "//postbuild": "node relativePath.js",
-    "clean": "rimraf dist/* .tmp/*",
-    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix"
+    "//postbuild": "node relativePath.js"
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.14.1",
