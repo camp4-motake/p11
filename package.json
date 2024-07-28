@@ -16,7 +16,7 @@
     "prebuild": "npm run clean -s",
     "//postbuild": "node relativePath.js",
     "clean": "rimraf dist/* .tmp/*",
-    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint --ignore-path .gitignore . --fix"
+    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint --ignore-pattern .gitignore . --fix"
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.14.1",
@@ -28,21 +28,26 @@
     "@parcel/resolver-glob": "^2.12.0",
     "@types/alpinejs": "^3.13.10",
     "@types/node": "^20.14.12",
-    "@typescript-eslint/eslint-plugin": "^7.17.0",
-    "@typescript-eslint/parser": "^7.17.0",
     "concurrently": "^8.2.2",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "9.1.0",
     "parcel": "^2.12.0",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
     "postcss": "^8.4.40",
     "postcss-easy-import": "^4.0.0",
-    "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
-    "sharp": "^0.31.3",
+    "sharp": "^0.31.3"
+  },
+  "peerDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.8.0",
+    "prettier": "^3.3.3",
     "stylelint": "16.7.0",
     "stylelint-config-recess-order": "5.0.1",
-    "stylelint-config-recommended": "14.0.1"
+    "stylelint-config-recommended": "14.0.1",
+    "typescript-eslint": "^8.0.0-alpha.10"
   },
   "@parcel/transformer-css": {
     "drafts": {
