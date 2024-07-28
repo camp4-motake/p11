@@ -7,12 +7,12 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache'",
+    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
     "build": "tsc --noEmit && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
     "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix",
     "clean": "rimraf dist/* .tmp/*",
-    "predev": "npm run clean -s",
-    "prebuild": "npm run clean -s",
+    "predev": "npm run clean",
+    "prebuild": "npm run clean",
     "//postbuild": "node lib/relativePath.js"
   },
   "dependencies": {
