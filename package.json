@@ -4,11 +4,8 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
-  "browserslist": [
-    "> 0.5% in JP and last 2 years and not dead"
-  ],
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache'",
     "build": "tsc --noEmit && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
@@ -65,5 +62,11 @@
     "rules": {
       "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
+  },
+  "browserslist": [
+    "> 0.5% in JP and last 2 years and not dead"
+  ],
+  "volta": {
+    "node": "20.16.0"
   }
 }
