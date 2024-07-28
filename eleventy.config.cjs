@@ -1,4 +1,5 @@
 const path = require("node:path")
+const sizeOf = require("image-size")
 
 module.exports = function (eleventyConfig) {
   /**
@@ -45,6 +46,21 @@ module.exports = function (eleventyConfig) {
     return Object.assign({}, ...args)
   })
 
+  /**
+   * custom short code
+   * @see https://www.11ty.dev/docs/shortcodes/
+   */
+  eleventyConfig.addShortcode("img", function (src, attr) {
+    if (!src) return ""
+    const newAttr = getImgAttr(src, attr, "img")
+    return `<img ${newAttr}>`
+  })
+  eleventyConfig.addShortcode("source", function (src, attr) {
+    if (!src) return ""
+    const newAttr = getImgAttr(src, attr, "source")
+    return `<source ${newAttr}>`
+  })
+
   return {
     dir: {
       input: "src/pages",
@@ -54,4 +70,69 @@ module.exports = function (eleventyConfig) {
       data: "_data",
     },
   }
+}
+
+/**
+ * Image Attribute Generation
+ * @param {string} src
+ * @param {object} attr
+ * @param {string} mode
+ * @returns {string}
+ */
+function getImgAttr(src, attr = {}, mode = "img") {
+  const q = { as: "webp", ...getQueryParamsRegex(src) }
+  const imgSrc = src.split("?")[0]
+  const attrType = {
+    img: {
+      src: path.join(imgSrc) + `?${objectToQueryString(q)}`,
+      alt: "",
+      loading: "lazy",
+    },
+    source: {
+      srcset: path.join(imgSrc) + `?${objectToQueryString(q)}`,
+    },
+  }
+
+  if (!attrType[mode]) {
+    return ""
+  }
+
+  const imgPath = path.join(__dirname, imgSrc)
+  const size = {}
+  let dimensions = {}
+
+  try {
+    dimensions = sizeOf(imgPath)
+    size.width = dimensions?.width
+    size.height = dimensions?.height
+  } catch (error) {
+    new Error(error)
+  }
+
+  if (q?.width) {
+    size.width = q?.width
+  }
+
+  if (q?.height) {
+    size.height = q?.height
+  }
+
+  const attrs = { ...attrType[mode], ...size, ...attr }
+
+  return Object.keys(attrs)
+    .map((key) => `${key}="${attrs[key]}"`)
+    .join(" ")
+}
+
+function getQueryParamsRegex(url) {
+  const query = url.split("?")[1] || ""
+  return query.split("&").reduce((params, param) => {
+    const [key, value] = param.split("=")
+    params[decodeURIComponent(key)] = decodeURIComponent(value || "")
+    return params
+  }, {})
+}
+
+function objectToQueryString(obj) {
+  return new URLSearchParams(obj).toString()
 }
