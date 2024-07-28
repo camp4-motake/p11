@@ -1,4 +1,13 @@
 {
+  "plugins": ["prettier-plugin-jinja-template"],
   "bracketSpacing": true,
-  "semi": false
+  "semi": false,
+  "overrides": [
+    {
+      "files": ["*.njk"],
+      "options": {
+        "parser": "jinja-template"
+      }
+    }
+  ]
 }
