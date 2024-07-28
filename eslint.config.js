@@ -5,6 +5,8 @@ import globals from "globals"
 import tsEslint from "typescript-eslint"
 
 export default [
+  { files: ["**/*.{js,mjs,cjs,ts}"] },
+  { ignores: ["dist/**/*", "node_modules/**/*", "vendor/**/*", "_site/**/*"] },
   pluginJs.configs.recommended,
   ...tsEslint.configs.recommended,
   eslintConfigPrettier,
@@ -19,15 +21,5 @@ export default [
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
     },
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts}"],
-    ignores: [
-      ".parcel-cache/**/*",
-      "_site/**/*",
-      "dist/**/*",
-      "node_modules/**/*",
-      "vendor/**/*",
-    ],
   },
 ]
