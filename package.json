@@ -16,7 +16,7 @@
     "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean -s",
     "prebuild": "npm run clean -s",
-    "//postbuild": "node relativePath.js"
+    "//postbuild": "node lib/relativePath.js"
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.14.1",
