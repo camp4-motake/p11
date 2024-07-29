@@ -9,8 +9,7 @@
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet --formats=11ty.jsx,11ty.tsx' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
     "build": "tsc && npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
-    "//format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts,jsx,tsx}' --fix",
-    "lint": "biome lint src &&  && stylelint 'src/**/*.css'",
+    "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check src && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean",
