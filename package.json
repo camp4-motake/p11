@@ -8,8 +8,10 @@
   },
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet --formats=11ty.jsx,11ty.tsx' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
-    "build": "tsc --noEmit && npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
-    "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts,jsx,tsx}' --fix",
+    "build": "tsc && npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
+    "//format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts,jsx,tsx}' --fix",
+    "lint": "biome lint src &&  && stylelint 'src/**/*.css'",
+    "format": "biome check src && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean",
     "prebuild": "npm run clean",
@@ -41,19 +43,11 @@
     "sharp": "^0.31.3",
     "tsx": "^4.16.2"
   },
-  "peerDependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.8.0",
-    "eslint": "^9.8.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globals": "^15.8.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-jinja-template": "^1.4.1",
+  "optionalDependencies": {
+    "@biomejs/biome": "^1.8.3",
     "stylelint": "16.7.0",
     "stylelint-config-recess-order": "5.0.1",
-    "stylelint-config-recommended": "14.0.1",
-    "typescript-eslint": "^8.0.0-alpha.10"
+    "stylelint-config-recommended": "14.0.1"
   },
   "@parcel/transformer-css": {
     "drafts": {

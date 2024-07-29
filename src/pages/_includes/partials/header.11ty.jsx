@@ -1,5 +1,5 @@
-import react from "react"
+import React from 'react';
 
 export default () => {
-  return <header>test</header>
-}
+  return <header>test</header>;
+};
