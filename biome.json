@@ -33,7 +33,8 @@
   "linter": {
     "enabled": true,
     "include": [
-      "src/**"
+      "src/**",
+      "*.{js,ts,cjs,mjs}"
     ],
     "rules": {
       "recommended": true,
