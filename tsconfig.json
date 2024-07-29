@@ -1,21 +1,30 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "module": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "moduleResolution": "Node",
-    "outDir": "./dist",
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
     "strict": true,
-    "target": "ESNext"
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [
     "node_modules",
     "src/**/*.test.tsx",

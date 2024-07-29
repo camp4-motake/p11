@@ -19,7 +19,6 @@ export default function (eleventyConfig) {
       }
     },
   })
-
   eleventyConfig.addTransform("tsx", async (content) => {
     return `<!doctype html>\n${content}`
   })

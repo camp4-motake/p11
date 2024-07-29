@@ -12,17 +12,18 @@
     "source.fixAll.stylelint": "explicit"
   },
   "files.associations": {
-    "*.css": "postcss",
-    "*.njk": "html"
+    "*.css": "postcss"
   },
   "emmet.includeLanguages": {
-    "njk": "html",
     "postcss": "css"
   },
   "css.validate": false,
   "postcss.validate": false,
-  "stylelint.validate": ["css", "postcss"],
-  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
+  "stylelint.validate": [
+    "css",
+    "postcss"
+  ],
+  "alpine-intellisense.settings.languageScopes": "html,jsx,tsx",
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -34,5 +35,5 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
-  },
+  }
 }
