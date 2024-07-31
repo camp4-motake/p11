@@ -10,9 +10,7 @@
   },
   "formatter": {
     "enabled": true,
-    "include": [
-      "src/**"
-    ],
+    "ignore": ["node_modules/**", "dist/**", ".vscode/**"],
     "indentWidth": 2,
     "indentStyle": "space"
   },
@@ -32,9 +30,7 @@
   },
   "linter": {
     "enabled": true,
-    "include": [
-      "src/**"
-    ],
+    "ignore": ["node_modules/**", "dist/**", ".vscode/**"],
     "rules": {
       "recommended": true,
       "style": {

@@ -10,7 +10,7 @@
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet --formats=11ty.jsx,11ty.tsx' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
     "build": "tsc && npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
-    "format": "biome check src && stylelint 'src/**/*.css' --fix",
+    "format": "biome check --write && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist/* .tmp/*",
     "html:format": "npx js-beautify 'dist/**/*.html' -r -s=2 -L=false -N=false",
     "predev": "npm run clean",
@@ -65,9 +65,7 @@
       "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   },
-  "browserslist": [
-    "> 0.5% in JP and last 2 years and not dead"
-  ],
+  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
   "volta": {
     "node": "20.16.0"
   }
