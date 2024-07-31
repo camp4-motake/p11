@@ -1,13 +1,16 @@
 import React from 'react';
 import Sample from '../components/Sample';
 
-render.data = {
+export const data = {
   title: 'title text',
   permalink: '/',
   layout: 'base.11ty.jsx',
 };
 
-export default function render({ title }) {
+export default function render(data) {
+  const { title } = data;
+  console.log(title);
+
   return (
     <>
       <h1>{title}</h1>

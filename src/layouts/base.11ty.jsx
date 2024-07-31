@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../components/Footer.11ty';
+import Header from '../components/Header';
 
 export default function (data) {
   const {
@@ -87,8 +89,10 @@ export default function (data) {
         </head>
 
         <body>
+          <Header />
           {/* biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation> */}
           <main dangerouslySetInnerHTML={{ __html: content }}></main>
+          <Footer />
         </body>
       </html>
     </>

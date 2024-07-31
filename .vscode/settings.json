@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     ".cache": true,
-    ".tmp": true,
+    // ".tmp": true,
     ".parcel-cache": true,
     "package-lock.json": true
   },
