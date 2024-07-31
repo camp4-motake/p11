@@ -1,4 +1,5 @@
 import React from 'react';
+import Sample from '../components/Sample';
 
 render.data = {
   title: 'title text',
@@ -12,6 +13,7 @@ export default function render({ title }) {
       <h1>{title}</h1>
       <p>text</p>
       <div x-data='inView' x-bind='trigger'></div>
+      <Sample />
     </>
   );
 }
