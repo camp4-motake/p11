@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from '../components/Footer.11ty';
-import Header from '../components/Header.11ty';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 export default function (data) {
   const {

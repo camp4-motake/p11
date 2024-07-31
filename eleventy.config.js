@@ -21,6 +21,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addTransform('tsx', async (content) => {
     return `<!doctype html>\n${content}`;
   });
+  eleventyConfig.addTemplateFormats('11ty.jsx,11ty.tsx');
 
   /**
    * eleventy dev server

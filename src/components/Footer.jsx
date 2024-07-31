@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function (data) {
+export default () => {
   return (
     <footer>
       <p>
@@ -8,4 +8,4 @@ export default function (data) {
       </p>
     </footer>
   );
-}
+};
