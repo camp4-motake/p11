@@ -13,7 +13,7 @@ export default function render(props) {
       <h1>{props.title}</h1>
       <p>text</p>
       <div x-data='inView' x-bind='trigger'></div>
-      <Sample title='neko' />
+      <Sample label='sample component text' />
     </>
   );
 }
