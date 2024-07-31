@@ -4,7 +4,7 @@ export default function (data) {
   return (
     <footer>
       <p>
-        <small>©corp nam</small>
+        <small>©corp name</small>
       </p>
     </footer>
   );

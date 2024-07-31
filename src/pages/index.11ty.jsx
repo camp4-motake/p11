@@ -1,5 +1,5 @@
 import React from 'react';
-import Sample from '../components/Sample';
+import Sample from '../components/Sample.11ty';
 
 export const data = {
   title: 'title text',
@@ -9,7 +9,6 @@ export const data = {
 
 export default function render(data) {
   const { title } = data;
-  console.log(title);
 
   return (
     <>
