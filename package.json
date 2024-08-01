@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
-    "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
+    "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist/* .tmp/*",
