@@ -81,11 +81,11 @@ export default function (eleventyConfig) {
 
   return {
     dir: {
-      input: 'src/pages',
+      input: 'src/site',
+      includes: '../_includes',
+      layouts: '../_includes',
       output: '.tmp',
-      includes: '../components',
-      layouts: '../layouts',
-      data: '../data',
+      data: '../_data',
     },
   };
 }

@@ -2,17 +2,18 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
-export default function (data) {
+export function BaseLayout(data) {
   const {
     canonical,
+    children,
     content,
     description,
     metadata,
     ogImage,
-    page,
-    titleText,
     ogType,
+    page,
     title,
+    titleText,
   } = data;
 
   return (
@@ -39,7 +40,7 @@ export default function (data) {
             property='og:description'
             content={description || metadata.description || ''}
           />
-          <meta
+          {/* <meta
             property='og:url'
             content={this.urlJoin(
               metadata.siteUrl,
@@ -63,7 +64,7 @@ export default function (data) {
           <link
             rel='canonical'
             href={this.urlJoin(metadata.siteUrl, page.url || canonical || '/')}
-          />
+          /> */}
           {metadata.webFonts && (
             <>
               <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -90,11 +91,12 @@ export default function (data) {
 
         <body>
           <Header />
-          {/* biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation> */}
-          <main dangerouslySetInnerHTML={{ __html: content }}></main>
+          <main>{children}</main>
           <Footer />
         </body>
       </html>
     </>
   );
 }
+
+export const render = BaseLayout;

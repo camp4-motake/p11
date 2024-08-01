@@ -1,5 +1,5 @@
 ---
-layout: base.11ty.jsx
+layout: layouts/BaseLayout.11ty.jsx
 title: About this site
 tags: [Editors]
 ---
