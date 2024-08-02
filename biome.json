@@ -21,7 +21,7 @@
     "formatter": {
       "enabled": true,
       "quoteStyle": "single",
-      "jsxQuoteStyle": "single",
+      "jsxQuoteStyle": "double",
       "trailingCommas": "all",
       "semicolons": "always",
       "arrowParentheses": "always",
