@@ -1,7 +1,11 @@
-const path = require("node:path")
-const sizeOf = require("image-size")
+import path from "node:path"
 
-module.exports = function (eleventyConfig) {
+import sizeOf from "image-size"
+import { fileURLToPath } from "url"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+export default function (eleventyConfig) {
   /**
    * eleventy dev server
    * @see https://www.11ty.dev/docs/dev-server/
