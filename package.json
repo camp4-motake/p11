@@ -13,7 +13,7 @@
     "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean",
     "prebuild": "npm run clean",
-    "//postbuild": "node lib/relativePath.js"
+    "postbuild": "npx js-beautify 'dist/**/*.html' -r -s=2 -L=false -N=false"
   },
   "dependencies": {
     "@acab/reset.css": "^0.10.0",
