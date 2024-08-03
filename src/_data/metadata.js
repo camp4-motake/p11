@@ -1,5 +1,5 @@
 export default {
-  domain: "recruit.florence.or.jp",
+  domain: "",
   encoding: "UTF-8",
   lang: "ja",
   region: "JP",
