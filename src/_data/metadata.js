@@ -1,5 +1,5 @@
 export default {
-  domain: "",
+  domain: "https://sample.com",
   encoding: "UTF-8",
   lang: "ja",
   region: "JP",
