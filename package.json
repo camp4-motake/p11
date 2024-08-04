@@ -7,8 +7,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
-    "build": "tsc --noEmit && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist/ --no-cache --no-source-maps",
+    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\"'",
+    "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --no-cache --no-source-maps",
     "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix",
     "clean": "rimraf dist/* .tmp/*",
     "predev": "npm run clean",

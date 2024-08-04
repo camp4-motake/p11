@@ -1,4 +1,3 @@
-import "./images/test300x300.png"
 import "./scripts/alpinejs"
 
 import intersect from "@alpinejs/intersect"
