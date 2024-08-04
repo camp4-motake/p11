@@ -65,9 +65,7 @@
       "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   },
-  "browserslist": [
-    "> 0.5% in JP and last 2 years and not dead"
-  ],
+  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
   "volta": {
     "node": "20.16.0"
   }
