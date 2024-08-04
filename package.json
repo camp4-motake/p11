@@ -34,7 +34,7 @@
     "rimraf": "^6.0.1",
     "sharp": "^0.31.3"
   },
-  "peerDependencies": {
+  "optionalDependencies": {
     "@eslint/compat": "^1.1.1",
     "@eslint/js": "^9.8.0",
     "eslint": "^9.8.0",

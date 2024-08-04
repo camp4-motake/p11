@@ -11,12 +11,15 @@ This is the home page.
 {%- for entry in collections.all %}
   <li><a href="{{ entry.url | url }}">{{ entry.url }}</a></li>
 {%- endfor %}
+{% img '/src/images/test300x300.png?width=200&height=150', { alt:'text' } %}
+
+{#
+example:
 
 <img src="/src/images/test300x300.png?as=webp&width=300" alt="" />
-
-<div x-data="inView" x-bind="trigger"></div>
 
 <picture>
   {% source '/src/images/test300x300.png', { media:'(min-width:768px)' } %}
   {% img '/src/images/test300x300.png?width=200&height=150', { alt:'text' } %}
 </picture>
+#}
