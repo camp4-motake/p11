@@ -67,6 +67,7 @@
     "> 0.5% in JP and last 2 years and not dead"
   ],
   "volta": {
-    "node": "20.16.0"
+    "node": "20.16.0",
+    "npm": "10.8.2"
   }
 }
