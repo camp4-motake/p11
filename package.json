@@ -11,9 +11,10 @@
     "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --no-cache --no-source-maps",
     "format": "prettier --write --list-different . && stylelint 'src/**/*.css' --fix && eslint '**/*.{js,mjs,cjs,ts}' --fix",
     "clean": "rimraf dist/* .tmp/*",
+    "clean:cache": "rimraf .parcel-cache",
     "predev": "npm run clean",
     "prebuild": "npm run clean",
-    "postbuild": "npx js-beautify 'dist/**/*.html' -r -s=2 -L=false -N=false"
+    "postbuild": "npx prettier --ignore-path /dev/null --print-width 256 --write dist/**/*.html"
   },
   "dependencies": {
     "@acab/reset.css": "^0.10.0",
