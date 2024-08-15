@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sample } from '../_includes/components/Sample';
+import { Sample } from '../_includes/components/Sample.11ty';
 import { BaseLayout } from '../_includes/layouts/BaseLayout.11ty';
 
 export const data = {
