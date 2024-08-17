@@ -1,1 +1,1 @@
-import "./**/*.{data,store,bind}.ts"
+import "./**/*.{data,store,bind}.ts";

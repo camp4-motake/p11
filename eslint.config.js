@@ -1,9 +1,9 @@
-import pluginJs from "@eslint/js"
-import tsPlugin from "@typescript-eslint/eslint-plugin"
-import tsParser from "@typescript-eslint/parser"
-import eslintConfigPrettier from "eslint-config-prettier"
-import simpleImportSort from "eslint-plugin-simple-import-sort"
-import globals from "globals"
+import pluginJs from "@eslint/js";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+import eslintConfigPrettier from "eslint-config-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import globals from "globals";
 
 export default [
   { ignores: ["dist/**/*", "node_modules/**/*", "vendor/**/*", "_site/**/*"] },
@@ -53,4 +53,4 @@ export default [
     },
   },
   eslintConfigPrettier,
-]
+];

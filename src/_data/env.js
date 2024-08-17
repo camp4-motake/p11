@@ -1,1 +1,1 @@
-export default process.env.ELEVENTY_ENV
+export default process.env.ELEVENTY_ENV;

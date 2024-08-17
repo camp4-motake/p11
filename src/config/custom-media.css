@@ -1,24 +1,26 @@
 /**
  * custom-media
  *
- * @link https://www.w3.org/TR/mediaqueries-5/#at-ruledef-custom-media
- * @link https://preset-env.cssdb.org/features/#custom-media-queries
+ * @see https://www.w3.org/TR/mediaqueries-5/#at-ruledef-custom-media
+ * @see https://preset-env.cssdb.org/features/#custom-media-queries
  */
-@custom-media --viewport-mobile (width >= 36em);
 @custom-media --viewport-sm (width >= 36em);
 @custom-media --viewport-md (width >= 48em);
 @custom-media --viewport-lg (width >= 62em);
 @custom-media --viewport-xl (width >= 75em);
-@custom-media --viewport-2xl (width >= 100em);
-@custom-media --viewport-3xl (width >= 125em);
-@custom-media --viewport-fluid-max (width >= 123.75em);
+@custom-media --viewport-xxl (width >= 100em);
+@custom-media --viewport-xxxl (width >= 125em);
 @custom-media --viewport-until-sm (width < 36em);
 @custom-media --viewport-until-md (width < 48em);
 @custom-media --viewport-until-lg (width < 75em);
-@custom-media --viewport-landscape (orientation: landscape);
-@custom-media --viewport-portrait (orientation: portrait);
-@custom-media --viewport-4by3 (min-aspect-ratio: 4/3);
-@custom-media --viewport-16by9 (min-aspect-ratio: 16/9);
-@custom-media --viewport-21by9 (min-aspect-ratio: 21/9);
-@custom-media --viewport-wide (--viewport-md) and (--viewport-landscape),
+@custom-media --viewport-nav (--viewport-xl);
+@custom-media --viewport-md-land (--viewport-md) and (orientation: landscape),
   (--viewport-lg);
+
+/* device env */
+@custom-media --hover (any-hover: hover);
+@custom-media --no-js (scripting: none);
+
+/* wp core block breakepoint */
+@custom-media --viewport-wp-sm (min-width: 600px);
+@custom-media --viewport-wp-md (min-width: 782px);
