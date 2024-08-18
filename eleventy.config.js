@@ -5,6 +5,7 @@ import sizeOf from 'image-size'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
   /**
    * eleventy dev server
