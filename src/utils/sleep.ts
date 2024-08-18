@@ -5,5 +5,6 @@
  * sleep(500).then(callback);
  *
  */
-export const sleep = (ms: number) =>
-  new Promise((resolve) => setTimeout(() => resolve(null), ms));
+export function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(() => resolve(null), ms))
+}

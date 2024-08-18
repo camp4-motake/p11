@@ -12,10 +12,8 @@
   --root-font-size: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
 
   /* font family */
-  --font-family-sans-serif: "Noto Sans JP", "SF Pro JP", "SF Pro Text",
-    "Hiragino Kaku Gothic Pro", sans-serif;
-  --font-family-en: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    sans-serif;
+  --font-family-sans-serif: 'Noto Sans JP', 'SF Pro JP', 'SF Pro Text', 'Hiragino Kaku Gothic Pro', sans-serif;
+  --font-family-en: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', sans-serif;
   --font-family-base: var(--font-family-sans-serif);
 
   /* --font-family-mix: "Jost", var(--font-family-base); */
@@ -228,10 +226,10 @@
   */
 
   /* ease: back
-	--ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-	--ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	--ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	*/
+  --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  */
 
   /* math: Infinity */
   --infinity: calc(1px / 0);

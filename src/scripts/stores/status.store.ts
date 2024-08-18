@@ -1,12 +1,12 @@
-import Alpine from "alpinejs";
+import Alpine from 'alpinejs'
 
-const name = "status";
-const store = { isPageActive: false };
+const name = 'status'
+const store = { isPageActive: false }
 
-Alpine.store(name, store);
+Alpine.store(name, store)
 
-declare module "alpinejs" {
+declare module 'alpinejs' {
   interface Stores {
-    [name]: typeof store;
+    [name]: typeof store
   }
 }

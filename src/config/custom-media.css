@@ -14,8 +14,7 @@
 @custom-media --viewport-until-md (width < 48em);
 @custom-media --viewport-until-lg (width < 75em);
 @custom-media --viewport-nav (--viewport-xl);
-@custom-media --viewport-md-land (--viewport-md) and (orientation: landscape),
-  (--viewport-lg);
+@custom-media --viewport-md-land (--viewport-md) and (orientation: landscape), (--viewport-lg);
 
 /* device env */
 @custom-media --hover (any-hover: hover);

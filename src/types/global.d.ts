@@ -1,7 +1,7 @@
-import { Alpine as AlpineType } from "alpinejs";
+import type { Alpine as AlpineType } from 'alpinejs'
 
 declare global {
   interface Window {
-    Alpine: AlpineType;
+    Alpine: AlpineType
   }
 }

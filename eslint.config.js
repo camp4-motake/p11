@@ -1,56 +1,39 @@
-import pluginJs from "@eslint/js";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import eslintConfigPrettier from "eslint-config-prettier";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
-import globals from "globals";
+/**
+ * @antfu/eslint-config
+ * @see https://github.com/antfu/eslint-config
+ */
+import antfu from '@antfu/eslint-config'
+import format from 'eslint-plugin-format'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
-export default [
-  { ignores: ["dist/**/*", "node_modules/**/*", "vendor/**/*", "_site/**/*"] },
-  pluginJs.configs.recommended,
+export default antfu(
   {
-    plugins: {
-      "simple-import-sort": simpleImportSort,
+    formatters: {
+      css: true,
+      html: true,
     },
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
+  },
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
-      "no-console": ["error", { allow: ["warn", "error"] }],
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
+      'object-shorthand': ['error', 'always'],
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
   {
-    files: ["**/*.js", "**/*.mjs"],
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-  },
-  {
-    files: ["**/*.cjs"],
-    languageOptions: {
-      sourceType: "commonjs",
-    },
-  },
-  {
-    files: ["**/*.ts"],
-    plugins: {
-      "@typescript-eslint": tsPlugin,
-    },
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
+    files: ['**/*.njk'],
+    plugins: { format },
+    languageOptions: { parser: format.parserPlain },
     rules: {
-      ...tsPlugin.configs["recommended"].rules,
+      'format/prettier': ['error', {
+        plugins: ['prettier-plugin-jinja-template'],
+        parser: 'jinja-template',
+        printWidth: 100,
+      }],
     },
   },
-  eslintConfigPrettier,
-];
+)
