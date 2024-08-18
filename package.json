@@ -63,6 +63,11 @@
   "staticFiles": {
     "staticPath": "static"
   },
+  "postcss": {
+    "plugins": {
+      "postcss-easy-import": true
+    }
+  },
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
