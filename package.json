@@ -18,29 +18,29 @@
     "postbuild": "npx prettier --ignore-path /dev/null --print-width 256 --write dist/**/*.html"
   },
   "dependencies": {
+    "@11ty/eleventy": "^3.0.0-beta.1",
     "@acab/reset.css": "^0.10.0",
     "@alpinejs/intersect": "^3.14.1",
-    "alpinejs": "^3.14.1"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.1",
-    "@antfu/eslint-config": "^2.26.0",
     "@parcel/resolver-glob": "^2.12.0",
     "@types/alpinejs": "^3.13.10",
     "@types/node": "^20.14.12",
     "@wordpress/browserslist-config": "^6.5.0",
+    "alpinejs": "^3.14.1",
     "concurrently": "^8.2.2",
-    "eslint-plugin-format": "^0.1.2",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
     "image-size": "^1.1.1",
     "parcel": "^2.12.0",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
     "parcel-reporter-static-files-copy": "^1.5.3",
     "postcss": "^8.4.40",
     "postcss-easy-import": "^4.0.0",
-    "prettier-plugin-jinja-template": "^1.4.1",
     "rimraf": "^6.0.1",
-    "sharp": "^0.31.3",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.26.0",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier-plugin-jinja-template": "^1.4.1",
     "stylelint": "16.7.0",
     "stylelint-config-recess-order": "5.0.1",
     "stylelint-config-recommended": "14.0.1"

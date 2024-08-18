@@ -14,10 +14,8 @@ export default antfu(
     },
   },
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    plugins: {
-      'simple-import-sort': simpleImportSort,
-    },
+    files: ['**/*.{js,mjs,jsx,ts,tsx}'],
+    plugins: { 'simple-import-sort': simpleImportSort },
     rules: {
       'object-shorthand': ['error', 'always'],
       'simple-import-sort/imports': 'error',
