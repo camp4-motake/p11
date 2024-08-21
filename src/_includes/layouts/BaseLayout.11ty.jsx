@@ -1,6 +1,5 @@
-import React from 'react';
-import Footer from '../components/Footer.11ty';
-import Header from '../components/Header.11ty';
+import { Footer } from '../components/Footer.11ty';
+import { Header } from '../components/Header.11ty';
 
 export function BaseLayout(data) {
   const {
@@ -98,5 +97,4 @@ export function BaseLayout(data) {
     </>
   );
 }
-
 export const render = BaseLayout;
