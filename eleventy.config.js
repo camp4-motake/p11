@@ -1,11 +1,18 @@
 import 'tsx/esm';
 
 import path from 'node:path';
+import { readFile } from 'node:fs/promises';
 
 import sizeOf from 'image-size';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 export default function (eleventyConfig) {
+  /**
+   * eleventy dev server
+   * @see https://www.11ty.dev/docs/dev-server/
+   */
+  eleventyConfig.setServerOptions({ domDiff: false, showAllHosts: true });
+
   /**
    * jsx support
    * @see https://www.11ty.dev/docs/languages/jsx/
@@ -18,19 +25,11 @@ export default function (eleventyConfig) {
         return renderToStaticMarkup(content);
       },
   });
-  eleventyConfig.addTransform('tsx', async (content) => {
-    return `<!doctype html>\n${content}`;
-  });
+  eleventyConfig.addTransform(
+    'tsx',
+    async (content) => `<!doctype html>\n${content}`,
+  );
   eleventyConfig.addTemplateFormats('11ty.jsx,11ty.tsx');
-
-  /**
-   * eleventy dev server
-   * @see https://www.11ty.dev/docs/dev-server/
-   */
-  eleventyConfig.setServerOptions({
-    domDiff: false,
-    showAllHosts: true,
-  });
 
   /**
    * Ignore Template Files
