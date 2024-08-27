@@ -55,6 +55,11 @@
       "customMedia": true
     }
   },
+  "postcss": {
+    "plugins": {
+      "postcss-easy-import": true
+    }
+  },
   "parcel-namer-rewrite": {
     "chain": "@parcel/namer-default",
     "hashing": "always",
