@@ -1,8 +1,5 @@
 import 'tsx/esm';
-
 import path from 'node:path';
-import { readFile } from 'node:fs/promises';
-
 import sizeOf from 'image-size';
 import { renderToStaticMarkup } from 'react-dom/server';
 
