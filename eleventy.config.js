@@ -77,7 +77,7 @@ export default function (eleventyConfig) {
 
   return {
     dir: {
-      input: 'src/site',
+      input: 'src/pages',
       includes: '../_includes',
       layouts: '../_includes',
       output: '.tmp',
