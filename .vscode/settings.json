@@ -1,21 +1,13 @@
 {
   "files.exclude": {
     ".cache": true,
-    // ".tmp": true,
+    ".tmp": true,
     ".parcel-cache": true,
     "package-lock.json": true
   },
   "editor.formatOnSave": true,
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "explicit"
-  },
-  "files.associations": {
-    "*.css": "postcss"
-  },
-  "emmet.includeLanguages": {
-    "postcss": "css"
   },
   "css.validate": false,
   "postcss.validate": false,
