@@ -7,7 +7,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "npx @11ty/eleventy && concurrently 'node lib/watch.js' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
+    "dev": "concurrently 'node lib/watch.js' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
     "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
