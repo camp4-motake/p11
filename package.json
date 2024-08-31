@@ -11,7 +11,7 @@
     "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
-    "clean": "rimraf dist/* .tmp/*",
+    "clean": "rimraf dist/* .tmp/* .parcel-cache",
     "clean:cache": "rimraf .parcel-cache",
     "html:format": "npx js-beautify 'dist/**/*.html' -r -s=2 -L=false -N=false",
     "predev": "npm run clean",

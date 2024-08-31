@@ -8,7 +8,7 @@ export default function (eleventyConfig) {
    * eleventy dev server
    * @see https://www.11ty.dev/docs/dev-server/
    */
-  eleventyConfig.setServerOptions({ domDiff: false, showAllHosts: true });
+  // eleventyConfig.setServerOptions({ domDiff: false, showAllHosts: true });
 
   /**
    * jsx support
@@ -78,8 +78,8 @@ export default function (eleventyConfig) {
   return {
     dir: {
       input: 'src/pages',
-      includes: '../_includes',
-      layouts: '../_includes',
+      includes: '../components',
+      layouts: '../layouts',
       output: '.tmp',
       data: '../_data',
     },

@@ -1,11 +1,11 @@
 import { Footer } from '../components/Footer.11ty';
 import { Header } from '../components/Header.11ty';
+import { pathJoin } from '../modules/pathJoin';
 
 export function BaseLayout(data) {
   const {
     canonical,
     children,
-    content,
     description,
     metadata,
     ogImage,
@@ -26,7 +26,6 @@ export function BaseLayout(data) {
           />
           <meta name="format-detection" content="telephone=no" />
           <meta name="theme-color" content="#ffffff" />
-
           <title>{titleText}</title>
           <meta
             name="description"
@@ -39,31 +38,25 @@ export function BaseLayout(data) {
             property="og:description"
             content={description || metadata.description || ''}
           />
-          {/* <meta
-            property='og:url'
-            content={this.urlJoin(
-              metadata.siteUrl,
-              page.url || canonical || '/',
-            )}
+          <meta
+            property="og:url"
+            content={pathJoin(metadata.siteUrl, page.url || canonical || '/')}
           />
-          <meta property='og:site_name' content={metadata.site_name} />
+          <meta property="og:site_name" content={metadata.site_name} />
           {metadata.siteUrl && (
             <meta
-              property='og:image'
-              content={this.urlJoin(
-                metadata.siteUrl,
-                ogImage || metadata.ogImage,
-              )}
+              property="og:image"
+              content={pathJoin(metadata.siteUrl, ogImage || metadata.ogImage)}
             />
           )}
-          <meta name='twitter:card' content='summary_large_image' />
+          <meta name="twitter:card" content="summary_large_image" />
           {metadata.twitterSite && (
-            <meta name='twitter:site' content={metadata.twitterSite || ''} />
+            <meta name="twitter:site" content={metadata.twitterSite || ''} />
           )}
           <link
-            rel='canonical'
-            href={this.urlJoin(metadata.siteUrl, page.url || canonical || '/')}
-          /> */}
+            rel="canonical"
+            href={pathJoin(metadata.siteUrl, page.url || canonical || '/')}
+          />
           {metadata.webFonts && (
             <>
               <link rel="preconnect" href="https://fonts.googleapis.com" />
