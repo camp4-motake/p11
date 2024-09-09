@@ -72,6 +72,18 @@ export function BaseLayout(data) {
               url?.path && (
                 <link
                   key={`fonts-${url?.key}`}
+                  rel="preload"
+                  as="style"
+                  fetchpriority="high"
+                  href={url?.path}
+                />
+              ),
+          )}
+          {metadata?.webFonts.map(
+            (url) =>
+              url?.path && (
+                <link
+                  key={`fonts-${url?.key}`}
                   rel="stylesheet"
                   href={url?.path}
                 />
