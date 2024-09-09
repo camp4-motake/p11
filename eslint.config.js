@@ -4,7 +4,6 @@
  */
 import antfu from '@antfu/eslint-config'
 import format from 'eslint-plugin-format'
-import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
 export default antfu(
   {
@@ -15,12 +14,7 @@ export default antfu(
   },
   {
     files: ['**/*.{js,mjs,jsx,ts,tsx}'],
-    plugins: { 'simple-import-sort': simpleImportSort },
-    rules: {
-      'object-shorthand': ['error', 'always'],
-      'simple-import-sort/imports': 'error',
-      'simple-import-sort/exports': 'error',
-    },
+    rules: { 'object-shorthand': ['error', 'always'] },
   },
   {
     files: ['**/*.njk'],
