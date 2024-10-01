@@ -1,1 +1,1 @@
-import './**/*.ts'
+import './**/*.ts';

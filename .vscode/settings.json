@@ -13,63 +13,33 @@
     "njk": "html",
     "postcss": "css"
   },
-  "css.validate": false,
-  "postcss.validate": false,
-  "stylelint.validate": [
-    "css",
-    "postcss"
-  ],
-  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
-
-  // -----------------------
-  // @antfu/eslint-config
-  // https://github.com/antfu/eslint-config?tab=readme-ov-file#ide-support-auto-fix-on-save
-
-  // Disable the default formatter, use eslint instead
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
-  // Auto fix
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
+    "source.organizeImports": "never"
   },
-  // Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off", "fixable": true },
-    { "rule": "format/*", "severity": "off", "fixable": true },
-    { "rule": "*-indent", "severity": "off", "fixable": true },
-    { "rule": "*-spacing", "severity": "off", "fixable": true },
-    { "rule": "*-spaces", "severity": "off", "fixable": true },
-    { "rule": "*-order", "severity": "off", "fixable": true },
-    { "rule": "*-dangle", "severity": "off", "fixable": true },
-    { "rule": "*-newline", "severity": "off", "fixable": true },
-    { "rule": "*quotes", "severity": "off", "fixable": true },
-    { "rule": "*semi", "severity": "off", "fixable": true }
-  ],
-  // Enable eslint for all supported languages
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.validate": ["css", "postcss"],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml",
-    "xml",
-    "gql",
-    "graphql",
-    "astro",
-    "svelte",
-    "css",
-    "less",
-    "scss",
-    "pcss",
-    "postcss",
-    "nunjucks"
+    "typescriptreact"
   ],
-  "cSpell.words": ["antfu"]
+  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

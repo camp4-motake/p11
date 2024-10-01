@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\"'",
     "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --no-cache --no-source-maps",
-    "lint": "eslint . && stylelint 'src/**/*.css'",
-    "format": "eslint . --fix && stylelint 'src/**/*.css' --fix",
+    "lint": "prettier . --check && eslint .",
+    "format": "prettier . --write && eslint . --fix",
     "clean": "rimraf dist/* .tmp/*",
     "clean:cache": "rimraf .parcel-cache",
     "predev": "npm run clean && npx @11ty/eleventy",
@@ -37,12 +37,14 @@
     "sharp": "^0.31.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.4.1",
-    "eslint-plugin-format": "^0.1.2",
+    "@eslint/js": "9.11.0",
+    "eslint": "9.11.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-jinja-template": "^1.5.0",
-    "stylelint": "16.9.0",
-    "stylelint-config-recess-order": "5.1.0",
-    "stylelint-config-recommended": "14.0.1"
+    "prettier-plugin-organize-imports": "4.1.0",
+    "typescript-eslint": "8.6.0"
   },
   "@parcel/transformer-css": {
     "drafts": {

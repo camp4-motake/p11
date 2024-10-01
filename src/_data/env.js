@@ -1,3 +1,3 @@
-import process from 'node:process'
+import process from 'node:process';
 
-export default process.env.ELEVENTY_ENV
+export default process.env.ELEVENTY_ENV;
