@@ -1,9 +1,18 @@
+import sizeOf from 'image-size';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import sizeOf from 'image-size';
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export const config = {
+  dir: {
+    input: 'src/views',
+    output: '.tmp',
+    includes: '../components',
+    layouts: '../layouts',
+    data: '../_data',
+  },
+};
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -65,16 +74,6 @@ export default function (eleventyConfig) {
     const newAttr = getImgAttr(src, attr, 'source');
     return `<source ${newAttr}>`;
   });
-
-  return {
-    dir: {
-      input: 'src/views',
-      output: '.tmp',
-      includes: '../components',
-      layouts: '../layouts',
-      data: '../_data',
-    },
-  };
 }
 
 /**

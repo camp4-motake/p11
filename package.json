@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=18 <20",
+    "npm": ">=10"
   },
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\"'",
@@ -15,10 +16,10 @@
     "clean:cache": "rimraf .parcel-cache",
     "predev": "npm run clean && npx @11ty/eleventy",
     "prebuild": "npm run clean",
-    "postbuild": "npx prettier --ignore-path /dev/null --print-width 256 --write dist/**/*.html"
+    "postbuild": "npx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.1",
+    "@11ty/eleventy": "^3.0.0",
     "@acab/reset.css": "^0.10.0",
     "@alpinejs/intersect": "^3.14.1",
     "@parcel/resolver-glob": "^2.12.0",
@@ -38,8 +39,8 @@
   },
   "devDependencies": {
     "@eslint/js": "9.11.1",
-    "eslint": "9.11.1",
-    "globals": "^15.9.0",
+    "eslint": "^9.11.1",
+    "globals": "^15.10.0",
     "prettier": "^3.3.3",
     "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-jinja-template": "^2.0.0",
@@ -73,7 +74,7 @@
     "extends @wordpress/browserslist-config"
   ],
   "volta": {
-    "node": "20.16.0",
-    "npm": "10.8.2"
+    "node": "20.17.0",
+    "npm": "10.8.3"
   }
 }

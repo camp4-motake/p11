@@ -18,24 +18,31 @@
       content="{{ metadata.siteUrl | urlJoin(canonical or page.url or  '/') }}"
     />
     <meta property="og:site_name" content="{{ metadata.site_name }}" />
+
     {% if metadata.siteUrl -%}
       <meta
         property="og:image"
         content="{{ metadata.siteUrl | urlJoin(ogImage or metadata.ogImage or assets.themeURL + '/static/meta/ogp.png') }}"
       />
-    {%- endif %}
+    {%- endif -%}
+
     <meta name="twitter:card" content="summary_large_image" />
-    {% if metadata.twitterSite -%}
+
+    {%- if metadata.twitterSite -%}
       <meta name="twitter:site" content="{{ metadata.twitterSite or '' }}" />
     {%- endif -%}
+
     <link rel="canonical" href="{{ metadata.siteUrl | urlJoin( canonical or page.url or '/' ) }}" />
+
     {%- if metadata.webFonts -%}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     {%- endif -%}
-    {%- for fontUrl in metadata.webFonts %}
+
+    {%- for fontUrl in metadata.webFonts -%}
       <link rel="stylesheet" href="{{ fontUrl | safe }}" />
-    {%- endfor %}
+    {%- endfor -%}
+
     <link rel="stylesheet" href="/src/main.css" />
     <script type="module" src="/src/main.ts"></script>
   </head>
