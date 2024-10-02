@@ -5,7 +5,7 @@ import ts from 'typescript-eslint';
 /** @type {import('eslint').Linter.Config} */
 export default [
   {
-    ignores: ['dist/'],
+    ignores: ['dist/', '.parcel-cache'],
   },
   js.configs.recommended,
   ...ts.configs.recommended,
