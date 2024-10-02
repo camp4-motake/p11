@@ -4,8 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "engines": {
-    "node": ">=18 <20",
-    "npm": ">=10"
+    "node": ">=18 <20"
   },
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\"'",
