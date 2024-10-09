@@ -11,9 +11,9 @@
     "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --no-cache --no-source-maps",
     "lint": "prettier . --check && eslint .",
     "format": "prettier . --write && eslint . --fix",
-    "clean": "rimraf dist/* .tmp/*",
+    "clean": "rimraf dist/* .tmp/* .parcel-cache/*",
     "clean:cache": "rimraf .parcel-cache",
-    "predev": "npm run clean && npx @11ty/eleventy",
+    "predev": "npm run clean",
     "prebuild": "npm run clean",
     "postbuild": "npx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write"
   },
