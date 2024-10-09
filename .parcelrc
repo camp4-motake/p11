@@ -10,9 +10,5 @@
   ],
   "namers": [
     "parcel-namer-rewrite"
-  ],
-  "reporters": [
-    "...",
-    "parcel-reporter-static-files-copy"
   ]
 }
