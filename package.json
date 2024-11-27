@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "engines": {
-    "node": "18 || 20"
+    "node": ">=20"
   },
   "scripts": {
     "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\"'",
@@ -72,7 +72,6 @@
     "> 0.5% in JP and last 2 years and not dead"
   ],
   "volta": {
-    "node": "20.17.0",
-    "npm": "10.8.3"
+    "node": "22.11.0"
   }
 }
