@@ -14,7 +14,7 @@
   --font-family-mix: "Oswald", var(--font-family-base);
 
   /* font size */
-  --rem: 16 * 1rem;
+  --rem: calc(16 * 1rem);
   --font-tracking: 0;
 
   /* root font size */
