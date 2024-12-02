@@ -3,6 +3,16 @@ import path from 'node:path';
 import sizeOf from 'image-size';
 import { renderToStaticMarkup } from 'react-dom/server';
 
+export const config = {
+  dir: {
+    input: 'src/views',
+    output: '.tmp',
+    includes: '../components',
+    layouts: '../layouts',
+    data: '../_data',
+  },
+};
+
 export default function (eleventyConfig) {
   /**
    * eleventy dev server
@@ -75,15 +85,7 @@ export default function (eleventyConfig) {
     return `<source ${newAttr}>`;
   });
 
-  return {
-    dir: {
-      input: 'src/pages',
-      includes: '../components',
-      layouts: '../layouts',
-      output: '.tmp',
-      data: '../_data',
-    },
-  };
+
 }
 
 /**
