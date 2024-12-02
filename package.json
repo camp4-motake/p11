@@ -4,7 +4,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "concurrently 'node lib/watch.js' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
@@ -20,33 +20,33 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@acab/reset.css": "^0.10.0",
-    "@alpinejs/intersect": "^3.14.1",
-    "@parcel/resolver-glob": "^2.12.0",
-    "@types/alpinejs": "^3.13.10",
-    "@types/node": "^22.7.4",
-    "@types/react": "^18.3.10",
-    "@types/react-dom": "^18.3.0",
-    "alpinejs": "^3.14.1",
+    "@acab/reset.css": "^0.11.0",
+    "@alpinejs/intersect": "^3.14.5",
+    "@parcel/resolver-glob": "^2.13.2",
+    "@types/alpinejs": "^3.13.11",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "alpinejs": "^3.14.5",
     "cheerio": "^1.0.0",
-    "chokidar": "^3.6.0",
-    "concurrently": "^9.0.1",
+    "chokidar": "^4.0.1",
+    "concurrently": "^9.1.0",
     "esbuild-register": "^3.6.0",
     "image-size": "^1.1.1",
-    "parcel": "^2.12.0",
+    "parcel": "^2.13.2",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.49",
     "postcss-easy-import": "^4.0.0",
     "process": "^0.11.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",
-    "sharp": "^0.31.3",
-    "tsx": "^4.19.1"
+    "sharp": "^0.33.5",
+    "tsx": "^4.19.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "stylelint": "16.9.0",
+    "@biomejs/biome": "^1.9.4",
+    "stylelint": "16.11.0",
     "stylelint-config-recess-order": "5.1.1",
     "stylelint-config-recommended": "14.0.1"
   },
@@ -70,8 +70,10 @@
       "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   },
-  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
+  "browserslist": [
+    "> 0.5% in JP and last 2 years and not dead"
+  ],
   "volta": {
-    "node": "20.16.0"
+    "node": "22.11.0"
   }
 }
