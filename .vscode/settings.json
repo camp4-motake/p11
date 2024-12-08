@@ -16,6 +16,9 @@
     "postcss"
   ],
   "alpine-intellisense.settings.languageScopes": "html,jsx,tsx",
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },

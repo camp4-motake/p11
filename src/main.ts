@@ -1,4 +1,4 @@
-import './scripts/alpinejs';
+import './viewScripts/alpinejs';
 
 import intersect from '@alpinejs/intersect';
 import Alpine from 'alpinejs';

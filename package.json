@@ -31,7 +31,6 @@
     "cheerio": "^1.0.0",
     "chokidar": "^4.0.1",
     "concurrently": "^9.1.0",
-    "esbuild-register": "^3.6.0",
     "image-size": "^1.1.1",
     "parcel": "^2.13.2",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
@@ -45,10 +44,7 @@
     "tsx": "^4.19.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "stylelint": "16.11.0",
-    "stylelint-config-recess-order": "5.1.1",
-    "stylelint-config-recommended": "14.0.1"
+    "@biomejs/biome": "^1.9.4"
   },
   "@parcel/transformer-css": {
     "drafts": {
