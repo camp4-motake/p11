@@ -1,10 +1,19 @@
 import path from 'node:path';
 import sizeOf from 'image-size';
-import type { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
+import type {
+  DetailedHTMLProps,
+  ImgHTMLAttributes,
+  SourceHTMLAttributes,
+} from 'react';
 
-type ImgType = DetailedHTMLProps<
+export type ImgType = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement
+>;
+
+export type SourceType = DetailedHTMLProps<
+  SourceHTMLAttributes<HTMLSourceElement>,
+  HTMLSourceElement
 >;
 
 interface SizeOf {
@@ -30,7 +39,7 @@ export function useImgSizeOfAttr(
   src: string,
   attr: Partial<ImgType> = {},
   mode: 'img' | 'source' = 'img',
-): ImgType {
+): ImgType | SourceType {
   // Default query params with 'as' set to 'webp'
   const q: QueryParams = { as: 'webp', ...getQueryParamsRegex(src) };
   const imgSrc = src.split('?')[0];
@@ -74,7 +83,7 @@ export function useImgSizeOfAttr(
   }
 
   // Combine attributes
-  const attrs: ImgType = {
+  const attrs: ImgType | SourceType = {
     ...attrType.img,
     ...size,
     ...attr,

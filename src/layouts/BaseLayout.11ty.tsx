@@ -1,7 +1,7 @@
-import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
 import { Footer } from '../components/Footer.11ty';
 import { Header } from '../components/Header.11ty';
 import { usePathJoin } from '../hooks/usePathJoin';
+import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
 
 interface DefaultLayoutData extends EleventyPage {}
 
@@ -112,7 +112,7 @@ const render: EleventyRenderFunction<DefaultLayoutData> = (data) => {
         )}
 
         <link rel="stylesheet" href="/src/main.css" />
-        <script type="module" src="/src/main.ts"></script>
+        <script type="module" src="/src/main.ts" />
       </head>
 
       <body>

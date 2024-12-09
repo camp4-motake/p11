@@ -1,7 +1,7 @@
-import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
-import BaseLayout from '../layouts/BaseLayout.11ty';
-import { Sample } from '../components/Sample.11ty';
 import { Image } from '../components/Image';
+import { Sample } from '../components/Sample.11ty';
+import BaseLayout from '../layouts/BaseLayout.11ty';
+import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
 
 export type HomePageData = EleventyPage;
 

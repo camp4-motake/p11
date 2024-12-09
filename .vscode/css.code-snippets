@@ -19,47 +19,47 @@
 	// media query
 	"custom media viewport": {
 		"prefix": "mq",
-		"body": [ "@media (width >= $1em){", "$2", "}" ],
+		"body": ["@media (width >= $1em){", "$2", "}"],
 		"description": "Custom Media Queries"
 	},
 	"custom media viewport sm": {
 		"prefix": "mqsm",
-		"body": [ "@media (width >= 36em){", "$1", "}" ],
+		"body": ["@media (width >= 36em){", "$1", "}"],
 		"description": "Custom Media Queries sm"
 	},
 	"custom media viewport md": {
 		"prefix": "mqmd",
-		"body": [ "@media (width >= 48em){", "$1", "}" ],
+		"body": ["@media (width >= 48em){", "$1", "}"],
 		"description": "Custom Media Queries md"
 	},
 	"custom media viewport lg": {
 		"prefix": "mqlg",
-		"body": [ "@media (width >= 62em){", "$1", "}" ],
+		"body": ["@media (width >= 62em){", "$1", "}"],
 		"description": "Custom Media Queries lg"
 	},
 	"custom media viewport xl": {
 		"prefix": "mqxl",
-		"body": [ "@media (width >= 75em){", "$1", "}" ],
+		"body": ["@media (width >= 75em){", "$1", "}"],
 		"description": "Custom Media Queries xl"
 	},
 	"custom media viewport xxl": {
 		"prefix": "mqxxl",
-		"body": [ "@media (width >= 100em){", "$1", "}" ],
+		"body": ["@media (width >= 100em){", "$1", "}"],
 		"description": "Custom Media Queries xxl"
 	},
 	"custom media viewport xxxl": {
 		"prefix": "mqxxxl",
-		"body": [ "@media (width >= 125em){", "$1", "}" ],
+		"body": ["@media (width >= 125em){", "$1", "}"],
 		"description": "Custom Media Queries xxl"
 	},
 	"custom media viewport wp sm": {
 		"prefix": "mqwpsm",
-		"body": [ "@media (width >= 600px){", "$1", "}" ],
+		"body": ["@media (width >= 600px){", "$1", "}"],
 		"description": "Custom Media Queries xxl"
 	},
 	"custom media viewport wp md": {
 		"prefix": "mqwpmd",
-		"body": [ "@media (width >= 782px){", "$1", "}" ],
+		"body": ["@media (width >= 782px){", "$1", "}"],
 		"description": "Custom Media Queries xxl"
 	},
 	"custom media viewport md and landscape": {
@@ -73,39 +73,39 @@
 	},
 	"custom media viewport any-hover": {
 		"prefix": "mqhover",
-		"body": [ "@media (any-hover: hover){ &:hover {", "$1", "} }" ],
+		"body": ["@media (any-hover: hover){ &:hover {", "$1", "} }"],
 		"description": "Custom media Queries any-hover"
 	},
 
 	// container query
 	"custom container viewport": {
 		"prefix": "cq",
-		"body": [ "@container (inline-size >= $1em){", "$2", "}" ],
+		"body": ["@container (inline-size >= $1em){", "$2", "}"],
 		"description": "Custom container Queries"
 	},
 	"custom container viewport sm": {
 		"prefix": "cqsm",
-		"body": [ "@container (inline-size >= 36em){", "$1", "}" ],
+		"body": ["@container (inline-size >= 36em){", "$1", "}"],
 		"description": "Custom container Queries sm"
 	},
 	"custom container viewport md": {
 		"prefix": "cqmd",
-		"body": [ "@container (inline-size >= 48em){", "$1", "}" ],
+		"body": ["@container (inline-size >= 48em){", "$1", "}"],
 		"description": "Custom container Queries md"
 	},
 	"custom container viewport lg": {
 		"prefix": "cqlg",
-		"body": [ "@container (inline-size >= 62em){", "$1", "}" ],
+		"body": ["@container (inline-size >= 62em){", "$1", "}"],
 		"description": "Custom container Queries lg"
 	},
 	"custom container viewport xl": {
 		"prefix": "cqxl",
-		"body": [ "@container (inline-size >= 75em){", "$1", "}" ],
+		"body": ["@container (inline-size >= 75em){", "$1", "}"],
 		"description": "Custom container Queries xl"
 	},
 	"custom container viewport xxl": {
 		"prefix": "cqxxl",
-		"body": [ "@container (inline-size >= 100em){", "$1", "}" ],
+		"body": ["@container (inline-size >= 100em){", "$1", "}"],
 		"description": "Custom container Queries xxl"
 	}
 }

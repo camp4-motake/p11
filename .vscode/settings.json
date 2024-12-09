@@ -8,7 +8,9 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "explicit"
+    "source.fixAll.stylelint": "explicit",
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "css.validate": false,
   "postcss.validate": false,
