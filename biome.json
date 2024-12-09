@@ -33,7 +33,6 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["node_modules/**", "dist/**", ".vscode/**"],
     "rules": {
       "recommended": true,
       "style": {
