@@ -4,7 +4,10 @@ import chokidar from 'chokidar';
 
 const buildHTML = () => {
   try {
-    execSync('npx @11ty/eleventy --incremental', { stdio: 'inherit' });
+    execSync(
+      'npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --incremental',
+      { stdio: 'inherit' },
+    );
   } catch (error) {
     console.error('Error running 11ty:', error);
   }

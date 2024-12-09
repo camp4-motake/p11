@@ -16,7 +16,7 @@ async function findHtmlFiles(dir) {
     if (file.isDirectory()) {
       htmlFiles.push(...(await findHtmlFiles(fullPath)));
     } else if (file.name.endsWith('.html')) {
-      htmlFiles.push(fullPath);
+      htmlFiles.push(fullPath as never);
     }
   }
   return htmlFiles;

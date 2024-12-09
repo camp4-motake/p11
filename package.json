@@ -7,8 +7,8 @@
     "node": ">=20 <=22"
   },
   "scripts": {
-    "dev": "concurrently 'node lib/watch.js' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
-    "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
+    "dev": "concurrently 'tsx lib/watch.ts' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
+    "build": "tsc && npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist/* .tmp/* .parcel-cache",
@@ -66,12 +66,16 @@
     }
   },
   "stylelint": {
-    "extends": ["stylelint-config-recess-order"],
+    "extends": [
+      "stylelint-config-recess-order"
+    ],
     "rules": {
       "no-descending-specificity": null
     }
   },
-  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
+  "browserslist": [
+    "> 0.5% in JP and last 2 years and not dead"
+  ],
   "volta": {
     "node": "22.11.0"
   }

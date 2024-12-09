@@ -9,7 +9,7 @@ const targetDirectory = path.join(__dirname, '../dist');
 
 async function convertToRelativePath(htmlContent, filePath, targetDirectory) {
   const srcHrefRegex = /(?<=src="|href=")\/(?!\/)[^"']*/g;
-  let replaceHtml;
+  let replaceHtml: string;
   replaceHtml = htmlContent.replace(srcHrefRegex, (match) => {
     const absolutePath = path.join('/', match);
     const relativePath = path.relative(
