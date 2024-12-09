@@ -1,4 +1,4 @@
-export const Sample = ({ label }) => {
+export const Sample = ({ label }: { label: string }) => {
   return <div>{label}</div>;
 };
 
