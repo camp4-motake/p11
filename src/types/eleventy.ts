@@ -21,7 +21,7 @@ export interface EleventyPage {
   title: string;
 
   /** ページのパーマリンク (URL) */
-  permalink: string;
+  permalink?: string;
 
   /** ページの説明 (任意) */
   description?: string;
