@@ -7,7 +7,7 @@ export const config = {
     output: '.tmp',
     includes: '../components',
     layouts: '../layouts',
-    data: '../_data',
+    data: './_data',
   },
 };
 
