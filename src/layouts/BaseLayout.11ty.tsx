@@ -1,11 +1,9 @@
-import { Footer } from '../components/Footer.11ty';
-import { Header } from '../components/Header.11ty';
+import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
 import { usePathJoin } from '../hooks/usePathJoin';
 import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
 
-interface DefaultLayoutData extends EleventyPage {}
-
-const render: EleventyRenderFunction<DefaultLayoutData> = (data) => {
+const render: EleventyRenderFunction<EleventyPage> = (data) => {
   const {
     canonical,
     children,

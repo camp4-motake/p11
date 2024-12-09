@@ -1,5 +1,4 @@
 import { Image } from '../components/Image';
-import { Sample } from '../components/Sample.11ty';
 import { SourceImg } from '../components/SourceImg';
 import BaseLayout from '../layouts/BaseLayout.11ty';
 import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
@@ -15,15 +14,9 @@ const render: EleventyRenderFunction<HomePageData> = (data) => {
   return (
     <BaseLayout {...data}>
       <h1>{data.title}</h1>
-      <p>text</p>
-      <img
-        src="/src/images/test300x300.png?as=webp"
-        alt=""
-        width={300}
-        height={300}
-      />
-      <Sample label="sample component text" />
+      <p>sample image</p>
       <Image src="/src/images/test300x300.png" />
+      <p>sample image</p>
       <picture>
         <SourceImg src="/src/images/test300x300.png" />
         <Image src="/src/images/test300x300.png" />
