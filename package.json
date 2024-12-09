@@ -44,7 +44,9 @@
     "tsx": "^4.19.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "^1.9.4",
+    "stylelint": "^16.11.0",
+    "stylelint-config-recess-order": "^5.1.1"
   },
   "@parcel/transformer-css": {
     "drafts": {
@@ -66,9 +68,11 @@
       "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   },
-  "browserslist": [
-    "> 0.5% in JP and last 2 years and not dead"
-  ],
+  "stylelint": {
+    "extends": ["stylelint-config-recess-order"],
+    "rules": { "no-descending-specificity": null }
+  },
+  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
   "volta": {
     "node": "22.11.0"
   }

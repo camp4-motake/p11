@@ -1,2 +1,8 @@
 @import "./config/**/*.css";
 @import "@acab/reset.css";
+
+body {
+  position: absolute;
+  inset-inline-start: top;
+  text-transform: capitalize;
+}

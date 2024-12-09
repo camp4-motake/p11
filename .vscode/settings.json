@@ -6,6 +6,7 @@
     "package-lock.json": true
   },
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": "explicit"
   },
