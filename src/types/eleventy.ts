@@ -1,3 +1,5 @@
+import type React from 'react';
+
 /** head メタデータ */
 interface SiteMetadata {
   lang?: string;
@@ -71,4 +73,4 @@ export interface EleventyPage {
 /** ページレンダリング関数の型 */
 export type EleventyRenderFunction<T extends EleventyPage = EleventyPage> = (
   data: T,
-) => JSX.Element;
+) => React.JSX.Element;

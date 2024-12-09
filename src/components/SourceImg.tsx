@@ -18,7 +18,6 @@ export const SourceImg = (
   const imgProps = useImgSizeOfAttr(
     src,
     {
-      alt: '',
       ...restProps,
     },
     'source',
