@@ -4,7 +4,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=20 <=22"
   },
   "scripts": {
     "dev": "concurrently 'node lib/watch.js' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
