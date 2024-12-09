@@ -5,8 +5,8 @@ const execPromise = promisify(exec);
 
 const tasks = [
   `npx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write`,
-  'node lib/replaceRelativePath.js', // WORKAROUND
-  'node lib/renameAssets.js', // WORKAROUND
+  'npx tsx lib/replaceRelativePath.ts',
+  'npx tsx lib/renameAssets.ts',
 ];
 
 async function runCommands() {

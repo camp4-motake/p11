@@ -16,7 +16,7 @@
     "html:format": "npx js-beautify 'dist/**/*.html' -r -s=2 -L=false -N=false",
     "predev": "npm run clean",
     "prebuild": "npm run clean",
-    "//postbuild": "node lib/relativePath.js"
+    "//postbuild": "npx tsx lib/postbuild.ts"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",

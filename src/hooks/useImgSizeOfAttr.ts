@@ -84,7 +84,7 @@ export function useImgSizeOfAttr(
 
   // Combine attributes
   const attrs: ImgType | SourceType = {
-    ...attrType.img,
+    ...attrType[mode],
     ...size,
     ...attr,
   };
