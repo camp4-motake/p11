@@ -15,7 +15,6 @@ const render: EleventyRenderFunction<HomePageData> = (data) => {
     <BaseLayout {...data}>
       <h1>{data.title}</h1>
       <p>text</p>
-      <div x-data="inView" x-bind="trigger"></div>
       <img
         src="/src/images/test300x300.png?as=webp"
         alt=""
