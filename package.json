@@ -67,16 +67,12 @@
     }
   },
   "stylelint": {
-    "extends": [
-      "stylelint-config-recess-order"
-    ],
+    "extends": ["stylelint-config-recess-order"],
     "rules": {
       "no-descending-specificity": null
     }
   },
-  "browserslist": [
-    "> 0.5% in JP and last 2 years and not dead"
-  ],
+  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
   "volta": {
     "node": "22.11.0"
   }
