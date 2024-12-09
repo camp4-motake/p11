@@ -37,7 +37,7 @@ interface QueryParams {
  */
 export function useImgSizeOfAttr(
   src: string,
-  attr: Partial<ImgType> = {},
+  attr: Partial<ImgType | SourceType> = {},
   mode: 'img' | 'source' = 'img',
 ): ImgType | SourceType {
   // Default query params with 'as' set to 'webp'

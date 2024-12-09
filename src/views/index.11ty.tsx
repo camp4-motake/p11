@@ -18,7 +18,10 @@ const render: EleventyRenderFunction<HomePageData> = (data) => {
       <Image src="/src/images/test300x300.png" />
       <p>sample image</p>
       <picture>
-        <SourceImg src="/src/images/test300x300.png" />
+        <SourceImg
+          src="/src/images/test300x300.png"
+          media="(inline-size >= 48em)"
+        />
         <Image src="/src/images/test300x300.png" />
       </picture>
     </BaseLayout>

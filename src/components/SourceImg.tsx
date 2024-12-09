@@ -1,15 +1,14 @@
-import type { ImgHTMLAttributes, ReactElement } from 'react';
-import type { SourceType } from '../hooks/useImgSizeOfAttr';
-import { useImgSizeOfAttr } from '../hooks/useImgSizeOfAttr';
+import type { ReactElement, SourceHTMLAttributes } from 'react';
+import { type SourceType, useImgSizeOfAttr } from '../hooks/useImgSizeOfAttr';
 
-type Props = ImgHTMLAttributes<HTMLImageElement> & {
+type Props = SourceHTMLAttributes<HTMLSourceElement> & {
   src: string;
 };
 
 export const SourceImg = (
   props: Props,
-): ReactElement<HTMLImageElement> | null => {
-  const { src, ...restProps } = props;
+): ReactElement<HTMLSourceElement> | null => {
+  const { src, ...attr } = props;
 
   if (!src) {
     return null;
@@ -18,7 +17,7 @@ export const SourceImg = (
   const imgProps = useImgSizeOfAttr(
     src,
     {
-      ...restProps,
+      ...attr,
     },
     'source',
   ) as SourceType;
