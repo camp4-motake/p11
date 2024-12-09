@@ -1,7 +1,7 @@
 import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
 import { Footer } from '../components/Footer.11ty';
 import { Header } from '../components/Header.11ty';
-import { pathJoin } from '../modules/pathJoin';
+import { usePathJoin } from '../hooks/usePathJoin';
 
 interface DefaultLayoutData extends EleventyPage {}
 
@@ -45,7 +45,7 @@ const render: EleventyRenderFunction<DefaultLayoutData> = (data) => {
 
         <meta
           property="og:url"
-          content={pathJoin(
+          content={usePathJoin(
             metadata?.siteUrl || '',
             page?.url || canonical || '/',
           )}
@@ -56,7 +56,7 @@ const render: EleventyRenderFunction<DefaultLayoutData> = (data) => {
         {metadata?.siteUrl && (
           <meta
             property="og:image"
-            content={pathJoin(
+            content={usePathJoin(
               metadata?.siteUrl,
               ogImage || metadata?.ogImage || '',
             )}
@@ -71,7 +71,7 @@ const render: EleventyRenderFunction<DefaultLayoutData> = (data) => {
 
         <link
           rel="canonical"
-          href={pathJoin(
+          href={usePathJoin(
             metadata?.siteUrl || '',
             page?.url || canonical || '/',
           )}
@@ -95,7 +95,6 @@ const render: EleventyRenderFunction<DefaultLayoutData> = (data) => {
                 key={`fonts-preload-${url?.key}`}
                 rel="preload"
                 as="style"
-                fetchpriority="high"
                 href={url?.path}
               />
             ),

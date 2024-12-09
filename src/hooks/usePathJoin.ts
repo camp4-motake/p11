@@ -1,4 +1,4 @@
-export function pathJoin(...paths: string[]) {
+export function usePathJoin(...paths: string[]) {
   return paths
     .map((path) => path?.replace(/\/+$/, ''))
     .join('/')

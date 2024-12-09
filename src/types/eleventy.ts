@@ -45,10 +45,24 @@ export interface EleventyPage {
   /** 子ノード */
   children?: React.ReactNode;
 
+  url?: '/';
+
+  outputPath?: './.tmp/index.html';
+
   page?: {
     url?: string;
     [key: string]: unknown;
   };
+
+  inputPath?: string;
+
+  fileSlug?: string;
+
+  filePathStem?: string;
+
+  outputFileExtension?: string;
+
+  templateSyntax?: string;
 
   /** その他の動的プロパティ */
   [key: string]: unknown;

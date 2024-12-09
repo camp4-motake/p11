@@ -1,8 +1,9 @@
 import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
-import { Sample } from '../components/Sample.11ty';
 import BaseLayout from '../layouts/BaseLayout.11ty';
+import { Sample } from '../components/Sample.11ty';
+import { Image } from '../components/Image';
 
-interface HomePageData extends EleventyPage {}
+export type HomePageData = EleventyPage;
 
 export const data: HomePageData = {
   title: 'title text',
@@ -22,6 +23,7 @@ const render: EleventyRenderFunction<HomePageData> = (data) => {
         height={300}
       />
       <Sample label="sample component text" />
+      <Image src="/src/images/test300x300.png" />
     </BaseLayout>
   );
 };
