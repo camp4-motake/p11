@@ -31,8 +31,6 @@
     "image-size": "^1.1.1",
     "parcel": "^2.13.2",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
-    "postcss": "^8.4.49",
-    "postcss-easy-import": "^4.0.0",
     "process": "^0.11.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -50,11 +48,6 @@
     "drafts": {
       "nesting": true,
       "customMedia": true
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "postcss-easy-import": true
     }
   },
   "parcel-namer-rewrite": {

@@ -1,2 +1,6 @@
+/**
+parcel css usage
+@see https://parceljs.org/languages/css/
+*/
 @import "./global/**/*.css";
-@import "@acab/reset.css";
+@import "npm:@acab/reset.css";
