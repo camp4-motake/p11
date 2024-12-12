@@ -31,7 +31,6 @@
     "image-size": "^1.1.1",
     "parcel": "^2.13.2",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
-    "process": "^0.11.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rimraf": "^6.0.1",
@@ -60,12 +59,16 @@
     }
   },
   "stylelint": {
-    "extends": ["stylelint-config-recess-order"],
+    "extends": [
+      "stylelint-config-recess-order"
+    ],
     "rules": {
       "no-descending-specificity": null
     }
   },
-  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
+  "browserslist": [
+    "> 0.5% in JP and last 2 years and not dead"
+  ],
   "volta": {
     "node": "22.11.0"
   }
