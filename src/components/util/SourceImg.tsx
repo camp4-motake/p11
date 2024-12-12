@@ -1,5 +1,8 @@
 import type { ReactElement, SourceHTMLAttributes } from 'react';
-import { type SourceType, useImgSizeOfAttr } from '../hooks/useImgSizeOfAttr';
+import {
+  type SourceType,
+  useImgSizeOfAttr,
+} from '../../hooks/useImgSizeOfAttr';
 
 type Props = SourceHTMLAttributes<HTMLSourceElement> & {
   src: string;

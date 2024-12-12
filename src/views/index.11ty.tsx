@@ -1,9 +1,9 @@
-import { Image } from '../components/Image';
-import { SourceImg } from '../components/SourceImg';
+import { Image } from '../components/util/Image';
+import { SourceImg } from '../components/util/SourceImg';
 import BaseLayout from '../layouts/BaseLayout.11ty';
 import type { EleventyPage, EleventyRenderFunction } from '../types/eleventy';
 
-export type HomePageData = EleventyPage;
+export interface HomePageData extends EleventyPage {}
 
 export const data: HomePageData = {
   title: 'title text',
