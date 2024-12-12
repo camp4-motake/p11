@@ -12,16 +12,7 @@ export const config = {
 };
 
 export default function (eleventyConfig) {
-  eleventyConfig.ignores.add('**/README.md');
-  eleventyConfig.ignores.add('**/.gitkeep');
-  eleventyConfig.ignores.add('**/_drafts/**');
-  eleventyConfig.watchIgnores.add('**/*.map');
-  eleventyConfig.watchIgnores.add('**/.**');
-
-  /**
-   * jsx support
-   * @see https://www.11ty.dev/docs/languages/jsx/
-   */
+  /** jsx/tsx support @see https://www.11ty.dev/docs/languages/jsx/ */
   eleventyConfig.addExtension(['11ty.jsx', '11ty.ts', '11ty.tsx'], {
     key: '11ty.js',
     compile: () =>
@@ -35,4 +26,11 @@ export default function (eleventyConfig) {
     async (content) => `<!doctype html>\n${content}`,
   );
   eleventyConfig.addTemplateFormats('11ty.jsx,11ty.tsx');
+
+  /** ignores */
+  eleventyConfig.ignores.add('**/README.md');
+  eleventyConfig.ignores.add('**/.gitkeep');
+  eleventyConfig.ignores.add('**/_drafts/**');
+  eleventyConfig.watchIgnores.add('**/*.map');
+  eleventyConfig.watchIgnores.add('**/.**');
 }
