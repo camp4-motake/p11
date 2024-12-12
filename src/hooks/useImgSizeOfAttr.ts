@@ -40,6 +40,10 @@ export function useImgSizeOfAttr(
   attr: Partial<ImgType | SourceType> = {},
   mode: 'img' | 'source' = 'img',
 ): ImgType | SourceType {
+  if (src.startsWith('http')) {
+    return mode === 'source' ? { srcSet: src, ...attr } : { src, ...attr };
+  }
+
   // Default query params with 'as' set to 'webp'
   const q: QueryParams = { as: 'webp', ...getQueryParamsRegex(src) };
   const imgSrc = src.split('?')[0];
