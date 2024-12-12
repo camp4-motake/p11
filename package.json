@@ -13,7 +13,6 @@
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist .tmp .parcel-cache",
     "clean:cache": "rimraf .parcel-cache",
-    "html:format": "npx js-beautify 'dist/**/*.html' -r -s=2 -L=false -N=false",
     "predev": "npm run clean",
     "prebuild": "npm run clean",
     "//postbuild": "npx tsx lib/postbuild.ts"
@@ -59,16 +58,12 @@
     }
   },
   "stylelint": {
-    "extends": [
-      "stylelint-config-recess-order"
-    ],
+    "extends": ["stylelint-config-recess-order"],
     "rules": {
       "no-descending-specificity": null
     }
   },
-  "browserslist": [
-    "> 0.5% in JP and last 2 years and not dead"
-  ],
+  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
   "volta": {
     "node": "22.11.0"
   }
