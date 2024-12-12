@@ -14,13 +14,7 @@ export const SourceImg = (
     return null;
   }
 
-  const imgProps = useImgSizeOfAttr(
-    src,
-    {
-      ...attr,
-    },
-    'source',
-  ) as SourceType;
+  const imgProps = useImgSizeOfAttr(src, { ...attr }, 'source') as SourceType;
 
   return <source {...imgProps} />;
 };
