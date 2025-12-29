@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "includes": ["**", "!**/node_modules/**", "!**/dist/**", "!.tmp/**"]
+    "includes": ["**", "!**/node_modules", "!**/dist", "!.tmp"]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "vcs": {
@@ -35,6 +35,9 @@
       "recommended": true,
       "style": {
         "useSelfClosingElements": "off"
+      },
+      "correctness": {
+        "useHookAtTopLevel": "off"
       }
     }
   }
