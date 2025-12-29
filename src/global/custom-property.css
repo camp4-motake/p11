@@ -6,10 +6,12 @@
   --color-text: #000000;
 
   /* font family */
-  --font-family-sans-serif: "Noto Sans JP", "SF Pro JP", "SF Pro Text",
-    "Hiragino Kaku Gothic Pro", sans-serif;
-  --font-family-en: "Oswald", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
-    "Helvetica", sans-serif;
+  --font-family-sans-serif:
+    "Noto Sans JP", "SF Pro JP", "SF Pro Text", "Hiragino Kaku Gothic Pro",
+    sans-serif;
+  --font-family-en:
+    "Oswald", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    sans-serif;
   --font-family-base: var(--font-family-sans-serif);
   --font-family-mix: "Oswald", var(--font-family-base);
 
