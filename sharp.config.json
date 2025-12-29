@@ -3,7 +3,7 @@
     "quality": 80,
     "chromaSubsampling": "4:4:4"
   },
-  "webp": {
+  "avif": {
     "nearLossless": true
   },
   "png": {

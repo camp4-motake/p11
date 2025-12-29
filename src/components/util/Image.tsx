@@ -14,6 +14,5 @@ export const Image = (props: Props): ReactElement<HTMLImageElement> | null => {
 
   const imgProps = useImgSizeOfAttr(src, { alt: '', ...restProps }) as ImgType;
 
-  // biome-ignore lint/a11y/useAltText: <explanation>
-  return <img {...imgProps} />;
+  return <img alt="" {...imgProps} />;
 };
