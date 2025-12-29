@@ -70,7 +70,7 @@
   "browserslist": [
     "> 0.5% in JP and last 2 years and not dead"
   ],
-  "packageManager": "pnpm@10.26.1",
+ "packageManager": "pnpm@10.26.1",
   "devEngines": {
     "runtime": [
       {
