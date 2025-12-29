@@ -2,8 +2,7 @@
   "files.exclude": {
     ".cache": true,
     ".tmp": true,
-    ".parcel-cache": true,
-    "package-lock.json": true
+    ".parcel-cache": true
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {

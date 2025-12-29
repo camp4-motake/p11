@@ -4,43 +4,45 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=20 <=22"
+    "node": ">=24"
   },
   "scripts": {
-    "dev": "concurrently 'node lib/watch.mjs' 'parcel \"./.tmp/**/*.html\" --dist-dir dist'",
-    "build": "tsc && npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
+    "dev": "concurrently 'pnpm dev:watch' 'pnpm dev:parcel'",
+    "dev:watch": "node lib/watch.mjs",
+    "dev:parcel": "parcel '.tmp/**/*.html' --dist-dir dist --no-cache",
+    "build": "tsc && pnpm exec eleventy --config=eleventy.config.ts && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist .tmp .parcel-cache",
     "clean:cache": "rimraf .parcel-cache",
-    "predev": "npm run clean",
-    "prebuild": "npm run clean",
-    "//postbuild": "npx tsx lib/postbuild.ts"
+    "predev": "pnpm clean && pnpm build",
+    "prebuild": "pnpm clean"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.2",
     "@acab/reset.css": "^0.11.0",
-    "@parcel/resolver-glob": "^2.13.2",
-    "@types/node": "^22.10.2",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.2",
-    "cheerio": "^1.0.0",
-    "chokidar": "^4.0.1",
-    "concurrently": "^9.1.0",
-    "image-size": "^1.1.1",
-    "parcel": "^2.13.2",
-    "parcel-namer-rewrite": "^2.10.3-rc.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "rimraf": "^6.0.1",
-    "sharp": "^0.33.5",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "@parcel/config-default": "^2.16.3",
+    "@parcel/resolver-glob": "^2.16.3",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "cheerio": "^1.1.2",
+    "chokidar": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "image-size": "^2.0.2",
+    "parcel": "^2.16.3",
+    "parcel-namer-rewrite": "^2.10.3-rc.5",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "rimraf": "^6.1.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "stylelint": "^16.11.0",
-    "stylelint-config-recess-order": "^5.1.1"
+    "@biomejs/biome": "^2.3.10",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.26.1",
+    "stylelint-config-recess-order": "^7.4.0"
   },
   "@parcel/transformer-css": {
     "drafts": {
@@ -58,13 +60,24 @@
     }
   },
   "stylelint": {
-    "extends": ["stylelint-config-recess-order"],
+    "extends": [
+      "stylelint-config-recess-order"
+    ],
     "rules": {
       "no-descending-specificity": null
     }
   },
-  "browserslist": ["> 0.5% in JP and last 2 years and not dead"],
-  "volta": {
-    "node": "22.11.0"
+  "browserslist": [
+    "> 0.5% in JP and last 2 years and not dead"
+  ],
+ "packageManager": "pnpm@10.26.1",
+  "devEngines": {
+    "runtime": [
+      {
+        "name": "node",
+        "version": "^24.12.0",
+        "onFail": "download"
+      }
+    ]
   }
 }

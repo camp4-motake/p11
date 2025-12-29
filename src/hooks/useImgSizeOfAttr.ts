@@ -1,5 +1,6 @@
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
-import sizeOf from 'image-size';
+import { imageSize } from 'image-size';
 import type {
   DetailedHTMLProps,
   ImgHTMLAttributes,
@@ -69,8 +70,10 @@ export function useImgSizeOfAttr(
   const size: { width?: number; height?: number } = {};
   let dimensions: SizeOf | undefined;
 
+  const buffer = readFileSync(imgPath);
+
   try {
-    dimensions = sizeOf(imgPath);
+    dimensions = imageSize(buffer);
     size.width = dimensions?.width;
     size.height = dimensions?.height;
   } catch (error) {

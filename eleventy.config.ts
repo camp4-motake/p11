@@ -21,11 +21,7 @@ export default function (eleventyConfig) {
         return renderToStaticMarkup(content);
       },
   });
-  eleventyConfig.addTransform(
-    'tsx',
-    async (content) => `<!doctype html>\n${content}`,
-  );
-  eleventyConfig.addTemplateFormats('11ty.jsx,11ty.tsx');
+  eleventyConfig.addTemplateFormats(['11ty.jsx', '11ty.ts', '11ty.tsx']);
 
   /** ignores */
   eleventyConfig.ignores.add('**/README.md');
