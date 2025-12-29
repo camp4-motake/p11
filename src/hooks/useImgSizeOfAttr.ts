@@ -57,7 +57,7 @@ export function useImgSizeOfAttr(
       // loading: 'lazy',
     },
     source: {
-      srcset: `${path.join(imgSrc)}?${objectToQueryString(q)}`,
+      srcSet: `${path.join(imgSrc)}?${objectToQueryString(q)}`,
     },
   };
 
