@@ -4,6 +4,8 @@ A static site generation project using 11ty/TSX as a template engine
 
 ## Commands
 
+## Tasks
+
 ```sh
 # install dependencies
 npm ci
@@ -14,5 +16,7 @@ npm run dev
 # build -> dist/
 npm run build
 ```
+
+## Resources
 
 [parcel](https://parceljs.org/) | [11ty](https://www.11ty.dev/)
