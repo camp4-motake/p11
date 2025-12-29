@@ -2,44 +2,40 @@
   "files.exclude": {
     ".cache": true,
     ".tmp": true,
-    ".parcel-cache": true,
-    "package-lock.json": true
-  },
-  "files.associations": {
-    "*.css": "postcss",
-    "*.njk": "html"
-  },
-  "emmet.includeLanguages": {
-    "njk": "html",
-    "postcss": "css"
+    ".parcel-cache": true
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.fixAll.biome": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "stylelint.validate": ["css", "postcss"],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
+  "css.validate": false,
+  "postcss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "postcss"
   ],
-  "alpine-intellisense.settings.languageScopes": "html,nunjucks",
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsx-tags]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }

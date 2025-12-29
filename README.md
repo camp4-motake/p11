@@ -1,17 +1,19 @@
 # P11
 
-Parcel 11ty Static Starter
+A static site generation project using 11ty/TSX as a template engine
+
+## Commands
 
 ## Tasks
 
 ```sh
-# init
+# install dependencies
 npm ci
 
 # dev -> http://localhost:1234
 npm run dev
 
-# build
+# build -> dist/
 npm run build
 ```
 

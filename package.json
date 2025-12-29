@@ -4,46 +4,45 @@
   "version": "0.1.0",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
-    "dev": "concurrently 'npx @11ty/eleventy --watch --incremental --quiet' 'parcel \"./.tmp/**/*.html\"'",
-    "build": "tsc && npx @11ty/eleventy && parcel build \"./.tmp/**/*.html\" --no-cache --no-source-maps",
-    "lint": "prettier . --check && eslint .",
-    "format": "prettier . --write && eslint . --fix",
-    "clean": "rimraf dist/* .tmp/* .parcel-cache/*",
+    "dev": "concurrently 'pnpm dev:watch' 'pnpm dev:parcel'",
+    "dev:watch": "node lib/watch.mjs",
+    "dev:parcel": "parcel '.tmp/**/*.html' --dist-dir dist --no-cache",
+    "build": "tsc && pnpm exec eleventy --config=eleventy.config.ts && parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
+    "lint": "biome lint src && stylelint 'src/**/*.css'",
+    "format": "biome check --write && stylelint 'src/**/*.css' --fix",
+    "clean": "rimraf dist .tmp .parcel-cache",
     "clean:cache": "rimraf .parcel-cache",
-    "predev": "npm run clean",
-    "prebuild": "npm run clean",
-    "postbuild": "npx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write"
+    "predev": "pnpm clean && pnpm build",
+    "prebuild": "pnpm clean"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@acab/reset.css": "^0.10.0",
-    "@alpinejs/intersect": "^3.14.3",
-    "@parcel/resolver-glob": "^2.13.0",
-    "@types/alpinejs": "^3.13.10",
-    "@types/node": "^22.9.0",
-    "alpinejs": "^3.14.3",
-    "concurrently": "^9.1.0",
-    "image-size": "^1.1.1",
-    "parcel": "^2.13.0",
-    "parcel-namer-rewrite": "^2.10.3-rc.2",
-    "parcel-reporter-static-files-copy": "^1.5.3",
-    "postcss": "^8.4.49",
-    "postcss-easy-import": "^4.0.0",
-    "rimraf": "^6.0.1",
-    "sharp": "^0.33.5"
+    "@11ty/eleventy": "^3.1.2",
+    "@acab/reset.css": "^0.11.0",
+    "@parcel/config-default": "^2.16.3",
+    "@parcel/resolver-glob": "^2.16.3",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "cheerio": "^1.1.2",
+    "chokidar": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "image-size": "^2.0.2",
+    "parcel": "^2.16.3",
+    "parcel-namer-rewrite": "^2.10.3-rc.5",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "rimraf": "^6.1.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@eslint/js": "9.14.0",
-    "eslint": "^9.14.0",
-    "globals": "^15.12.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-css-order": "2.1.2",
-    "prettier-plugin-jinja-template": "^2.0.0",
-    "prettier-plugin-organize-imports": "4.1.0",
-    "typescript-eslint": "8.14.0"
+    "@biomejs/biome": "^2.3.10",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.26.1",
+    "stylelint-config-recess-order": "^7.4.0"
   },
   "@parcel/transformer-css": {
     "drafts": {
@@ -60,18 +59,25 @@
       "(.*).(css|js|webp|avif|png|jpe?g|gif|svg|mp4|json)": "assets/$1{.hash}.$2"
     }
   },
-  "staticFiles": {
-    "staticPath": "static"
-  },
-  "postcss": {
-    "plugins": {
-      "postcss-easy-import": true
+  "stylelint": {
+    "extends": [
+      "stylelint-config-recess-order"
+    ],
+    "rules": {
+      "no-descending-specificity": null
     }
   },
   "browserslist": [
     "> 0.5% in JP and last 2 years and not dead"
   ],
-  "volta": {
-    "node": "22.11.0"
+  "packageManager": "pnpm@10.26.1",
+  "devEngines": {
+    "runtime": [
+      {
+        "name": "node",
+        "version": "^24.12.0",
+        "onFail": "download"
+      }
+    ]
   }
 }

@@ -1,11 +1,7 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
+    "biomejs.biome",
     "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
-    "ginfuru.better-nunjucks",
-    "pcbowers.alpine-intellisense",
-    "stylelint.vscode-stylelint",
-    "vunguyentuan.vscode-postcss"
+    "stylelint.vscode-stylelint"
   ]
 }

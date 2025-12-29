@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: BaseLayout.11ty.tsx
 title: About this site
 tags: [Editors]
 ---

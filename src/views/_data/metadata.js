@@ -1,5 +1,5 @@
 export default {
-  domain: 'https://sample.com',
+  domain: 'sample.com',
   encoding: 'UTF-8',
   lang: 'ja',
   region: 'JP',
@@ -16,6 +16,9 @@ export default {
   keywords: '',
   twitterSite: '',
   webFonts: [
-    'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap',
+    {
+      key: 'main',
+      path: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap',
+    },
   ],
 };

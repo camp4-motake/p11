@@ -5,12 +5,13 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const targetDirectory = path.join(__dirname, '../dist'); // 処理したいディレクトリのパスを指定
+const targetDirectory = path.join(__dirname, '../dist');
 
 async function convertToRelativePath(htmlContent, filePath, targetDirectory) {
-  // src と href 属性の変換
   const srcHrefRegex = /(?<=src="|href=")\/(?!\/)[^"']*/g;
-  htmlContent = htmlContent.replace(srcHrefRegex, (match) => {
+  let html = htmlContent;
+
+  html = html.replace(srcHrefRegex, (match) => {
     const absolutePath = path.join('/', match);
     let relativePath = path.relative(
       path.dirname(filePath),
@@ -20,9 +21,8 @@ async function convertToRelativePath(htmlContent, filePath, targetDirectory) {
     return relativePath.startsWith('.') ? relativePath : `./${relativePath}`;
   });
 
-  // srcset 属性の変換
   const srcsetRegex = /(?<=srcset=")([^"]*)/g;
-  htmlContent = htmlContent.replace(srcsetRegex, (match) => {
+  html = html.replace(srcsetRegex, (match) => {
     return match
       .split(',')
       .map((src) => {
@@ -44,10 +44,8 @@ async function convertToRelativePath(htmlContent, filePath, targetDirectory) {
       .join(', ');
   });
 
-  return htmlContent;
+  return html;
 }
-
-// 他の関数は変更なし
 
 async function processHtmlFile(filePath, targetDirectory) {
   try {
@@ -81,7 +79,6 @@ async function processDirectory(directory, targetDirectory) {
   }
 }
 
-// メイン処理
 async function main() {
   await processDirectory(targetDirectory, targetDirectory);
 

@@ -4,12 +4,27 @@
   --color-primary: #0d6efd;
   --color-secondary: #dc3545;
   --color-text: #000000;
-  --color-bg-fill: #f2f2f2;
-  --color-bg-global: #f2eeee;
-  --color-bg-mono: #dedede;
+
+  /* font family */
+  --font-family-sans-serif:
+    "Noto Sans JP", "SF Pro JP", "SF Pro Text", "Hiragino Kaku Gothic Pro",
+    sans-serif;
+  --font-family-en:
+    "Oswald", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    sans-serif;
+  --font-family-base: var(--font-family-sans-serif);
+  --font-family-mix: "Oswald", var(--font-family-base);
+
+  /* font size */
+  --rem: calc(16 * 1rem);
+  --font-tracking: 0;
 
   /* root font size */
-  --root-font-size: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --root-font-size: 4vw;
+
+  @media (width >= 48em) {
+    --root-font-size: clamp(0.875rem, 0.813rem + 0.31vw, 1.125rem);
+  }
 
   /* font family */
   --font-family-sans-serif: 'Noto Sans JP', 'SF Pro JP', 'SF Pro Text',
@@ -117,12 +132,53 @@
   --spacer-xxxl: 10.5rem; /* 168 */
   --gutter: clamp(1.5rem, 3.75%, 3rem);
 
+<<<<<<< HEAD:src/global/custom-property.css;
+  --view-columns: initial;
+  @media (width >= 48em) {
+    --view-columns: 1fr var(--main-view-width) 1fr;
+  }
+  @media (width >= 62em) {
+    --view-columns: 5fr var(--main-view-width) 1fr;
+  }
+  @media (width >= 100em) {
+    --view-columns: 3fr var(--main-view-width) 1fr;
+  }
+=======
   /* preset max container width */
-  --container-max-width-fluid: calc(1980 * var(--rem));
+  --container-max-width-fluid: calc(1980 * var(--rem));--container-max-width-fluid
   --container-max-width-view: 2560px;
+>>>>>>> main:src/config/custom-property.css;
 
   --container-max-width: auto;
-  --container-max-width-sm: calc(540 * var(--rem));
+<<<<<<< HEAD:src/global/custom-property.css;
+  --container-max-width-entry: calc(768 / var(--rem));
+  --container-max-width-view: calc(2560 / var(--rem));
+  --container-max-width-sm: calc(540 / var(--rem));
+  --container-max-width-md: calc(720 / var(--rem));
+  --container-max-width-lg: calc(960 / var(--rem));
+  --container-max-width-xl: calc(1140 / var(--rem));
+  --container-max-width-2xl: calc(1400 / var(--rem));
+  --container-max-width-3xl: calc(1600 / var(--rem));
+
+  @media (width >= 36em) {
+    --container-max-width: calc(540 / var(--rem));
+  }
+  @media (width >= 48em) {
+    --container-max-width: calc(720 / var(--rem));
+  }
+  @media (width >= 62em) {
+    --container-max-width: calc(960 / var(--rem));
+  }
+  @media (width >= 75em) {
+    --container-max-width: calc(1140 / var(--rem));
+  }
+  @media (width >= 100em) {
+    --container-max-width: calc(1400 / var(--rem));
+  }
+  @media (width >= 125em) {
+    --container-max-width: calc(1600 / var(--rem));
+=======
+  --container-max-width-sm: calc(540 * var(--rem));--container-max-width-sm
   --container-max-width-md: calc(720 * var(--rem));
   --container-max-width-lg: calc(960 * var(--rem));
   --container-max-width-xl: calc(1140 * var(--rem));
@@ -151,6 +207,7 @@
 
   @media (--viewport-xxxl) {
     --container-max-width: var(--container-max-width-xxxl);
+>>>>>>> main:src/config/custom-property.cssmain
   }
 
   /* wp content width */
@@ -186,7 +243,24 @@
   --z-nav-modal: 200;
   --z-overlay: 999;
 
+<<<<<<< HEAD:src/global/custom-property.css
+  /* header */;
+  --header-height: calc(70 / var(--rem));
+  --header-transition: 0.7s;
+
+  /* go byn size */
+  --go-btn-width: min(18%, calc(46 / var(--rem)));
+  @media (width >= 48em) {
+    --go-btn-width: min(5%, calc(62 / var(--rem)));
+  }
+
+  --ribbon-opacity: 0.6;
+
+  /* ease: cubic */
+  /*
+=======
   /* ease: cubic
+>>>>>>> main:src/config/custom-property.css
   --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -244,4 +318,5 @@
   --safe-right: env(safe-area-inset-right, 0);
   --safe-bottom: env(safe-area-inset-bottom, 0);
   --safe-left: env(safe-area-inset-left, 0);
+}
 }
