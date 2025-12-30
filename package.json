@@ -10,7 +10,7 @@
     "dev": "pnpm '/^dev:.*/'",
     "dev:watch": "node lib/watch.mjs",
     "dev:parcel": "parcel '.tmp/**/*.html' --dist-dir dist --no-cache",
-    "build": "tsc && pnpm build:eleventy && pnpm build:parcel && pnpm build:format:html && pnpm build:rename && pnpm build:relative",
+    "build": "tsc && pnpm build:eleventy && pnpm build:parcel && pnpm build:format:html",
     "build:eleventy": "pnpm exec eleventy --config=eleventy.config.ts",
     "build:parcel": "parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
     "build:format:html": "pnpm dlx js-beautify@latest \"./dist/**/*.html\" --indent-size 2 --no-preserve-newlines --end-with-newline false --extra-liners \"\" --unformatted \"script,style,svg,noscript\" --replace",
