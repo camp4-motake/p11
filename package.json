@@ -13,7 +13,7 @@
     "build": "tsc && pnpm build:eleventy && pnpm build:parcel && pnpm build:format:html && pnpm build:rename && pnpm build:relative",
     "build:eleventy": "pnpm exec eleventy --config=eleventy.config.ts",
     "build:parcel": "parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
-    "build:format:html": "pnpm dlx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write",
+    "build:format:html": "pnpm dlx js-beautify@latest \"./dist/**/*.html\" --indent-size 2 --no-preserve-newlines --end-with-newline false --extra-liners \"\" --unformatted \"script,style,svg,noscript\" --replace",
     "build:rename": "pnpm dlx tsx lib/renameAssets.ts",
     "build:relative": "node lib/relativePath.ts",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
