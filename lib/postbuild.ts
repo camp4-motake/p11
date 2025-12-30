@@ -4,9 +4,9 @@ import { promisify } from 'node:util';
 const execPromise = promisify(exec);
 
 const tasks = [
-  `npx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write`,
-  'npx tsx lib/replaceRelativePath.ts',
-  'npx tsx lib/renameAssets.ts',
+  `pnpm dlx js-beautify@latest './dist/**/*.html' --indent-size 2 --no-preserve-newlines --end-with-newline false --extra-liners "" --unformatted "script,style,svg,noscript" --replace`,
+  'node lib/replaceRelativePath.ts',
+  'node lib/renameAssets.ts',
 ];
 
 async function runCommands() {

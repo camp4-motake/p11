@@ -7,12 +7,15 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "pnpm dev:watch & pnpm dev:parcel",
+    "dev": "pnpm '/^dev:.*/'",
     "dev:watch": "node lib/watch.mjs",
     "dev:parcel": "parcel '.tmp/**/*.html' --dist-dir dist --no-cache",
-    "build": "tsc && pnpm build:eleventy && pnpm build:parcel",
+    "build": "tsc && pnpm build:eleventy && pnpm build:parcel && pnpm build:format:html && pnpm build:rename && pnpm build:relative",
     "build:eleventy": "pnpm exec eleventy --config=eleventy.config.ts",
     "build:parcel": "parcel build \"./.tmp/**/*.html\" --dist-dir dist --no-cache --no-source-maps",
+    "build:format:html": "pnpm dlx prettier './dist/**/*.html' --ignore-path /dev/null --print-width 256 --write",
+    "build:rename": "pnpm dlx tsx lib/renameAssets.ts",
+    "build:relative": "node lib/relativePath.ts",
     "lint": "biome lint src && stylelint 'src/**/*.css'",
     "format": "biome check --write && stylelint 'src/**/*.css' --fix",
     "clean": "rimraf dist .tmp .parcel-cache",

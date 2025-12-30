@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.join(__dirname, '../dist');
 
-// HTMLファイルを再帰的に検索する関数
+// Function to recursively search for HTML files
 async function findHtmlFiles(dir: string): Promise<string[]> {
   const files = await fs.readdir(dir, { withFileTypes: true });
   const htmlFiles: string[] = [];
@@ -23,12 +23,12 @@ async function findHtmlFiles(dir: string): Promise<string[]> {
 
 async function renameAssets() {
   try {
-    // assetsディレクトリ内のファイルを取得
+    // Get files from assets directory
     const assetsDir = path.join(distDir, 'assets');
     const files = await fs.readdir(assetsDir);
     const renameMapping = new Map<string, string>();
 
-    // ファイル名の変更とマッピングの作成
+    // Create file name mapping and perform renaming
     for (const file of files) {
       if (file.startsWith('index')) {
         const ext = path.extname(file);
@@ -36,7 +36,7 @@ async function renameAssets() {
 
         let newName: string;
 
-        // ハッシュが存在する場合と存在しない場合を処理
+        // Handle cases with and without hash in filename
         if (baseNameWithoutExt.includes('.')) {
           // index.{hash}.{ext} -> main.{hash}.{ext}
           const [, hash] = baseNameWithoutExt.split('.');
@@ -55,13 +55,13 @@ async function renameAssets() {
       }
     }
 
-    // すべてのHTMLファイルを検索して更新
+    // Search and update all HTML files
     const htmlFiles = await findHtmlFiles(distDir);
 
     for (const htmlPath of htmlFiles) {
       let htmlContent = await fs.readFile(htmlPath, 'utf8');
 
-      // すべての置換対象ファイル名について処理
+      // Process all target filenames for replacement
       for (const [oldName, newName] of renameMapping) {
         htmlContent = htmlContent.replace(
           new RegExp(oldName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
@@ -79,5 +79,5 @@ async function renameAssets() {
   }
 }
 
-// スクリプトの実行
+// Execute the script
 renameAssets();
