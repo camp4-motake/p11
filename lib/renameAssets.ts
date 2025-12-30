@@ -30,16 +30,18 @@ async function renameAssets() {
 
     // Create file name mapping and perform renaming
     for (const file of files) {
-      if (file.startsWith('index')) {
+      // index.* または tmp.* で始まるファイルをリネーム対象にする
+      if (file.startsWith('index') || file.startsWith('tmp')) {
         const ext = path.extname(file);
         const baseNameWithoutExt = path.basename(file, ext);
 
         let newName: string;
 
-        // Handle cases with and without hash in filename
+        // ハッシュが存在する場合と存在しない場合を処理
         if (baseNameWithoutExt.includes('.')) {
           // index.{hash}.{ext} -> main.{hash}.{ext}
-          const [, hash] = baseNameWithoutExt.split('.');
+          const parts = baseNameWithoutExt.split('.');
+          const hash = parts[parts.length - 1];
           newName = `main.${hash}${ext}`;
         } else {
           // index.{ext} -> main.{ext}

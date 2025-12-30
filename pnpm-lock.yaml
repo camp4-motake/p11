@@ -17,6 +17,9 @@ importers:
       '@parcel/config-default':
         specifier: ^2.16.3
         version: 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))(@swc/helpers@0.5.18)
+      '@parcel/optimizer-htmlnano':
+        specifier: ^2.16.3
+        version: 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))(postcss@8.5.6)(typescript@5.9.3)
       '@parcel/resolver-glob':
         specifier: ^2.16.3
         version: 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
@@ -670,6 +673,10 @@ packages:
     resolution: {integrity: sha512-EBmjY+QRa/in05wRWiL6B/kQ1ERemdg4W9py+V2w0tJx1n6yOvtjPGvivYtU+s82rlVlx6DN3DFU13iGRt0FuQ==}
     engines: {node: '>= 16.0.0', parcel: ^2.16.3}
 
+  '@parcel/optimizer-htmlnano@2.16.3':
+    resolution: {integrity: sha512-IWUbHdJxW1U89er61Ue5jbnhPlnlBwJBL1ZDxxkag2qaWg1Lt17aXZEz4hak6UbbwdkA3ay1lM+lWHMOvuoOKg==}
+    engines: {node: '>= 16.0.0', parcel: ^2.16.3}
+
   '@parcel/optimizer-image@2.16.3':
     resolution: {integrity: sha512-PbGsDXbbWyOnkpWn3jgZxtAp8l8LNXl7DCv5Q4l1TR6k4sULjmxTTPY6+AkY6H84cAN7s5h6F8k2XeN3ygXWCA==}
     engines: {node: '>= 16.0.0', parcel: ^2.16.3}
@@ -1079,6 +1086,9 @@ packages:
 
   '@types/react@19.2.7':
     resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
+
+  '@types/relateurl@0.2.33':
+    resolution: {integrity: sha512-bTQCKsVbIdzLqZhLkF5fcJQreE4y1ro4DIyVrlDNSCJRRwHhB8Z+4zXXa8jN6eDvc2HbRsEYgbvrnGvi54EpSw==}
 
   a-sync-waterfall@1.0.1:
     resolution: {integrity: sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==}
@@ -1618,6 +1628,35 @@ packages:
   html-tags@3.3.1:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
+
+  htmlnano@2.1.5:
+    resolution: {integrity: sha512-IXffzXq1beGQN2rsr03aIPK/rVU1jR2uwHymlAIEf97Tl5WdpG50IsQ5nWGvSGQJ+x6U7S6yac9rRiFgAg4/xQ==}
+    peerDependencies:
+      cssnano: ^7.0.0
+      postcss: ^8.3.11
+      purgecss: ^7.0.2
+      relateurl: ^0.2.7
+      srcset: 5.0.1
+      svgo: ^3.0.2
+      terser: ^5.10.0
+      uncss: ^0.17.3
+    peerDependenciesMeta:
+      cssnano:
+        optional: true
+      postcss:
+        optional: true
+      purgecss:
+        optional: true
+      relateurl:
+        optional: true
+      srcset:
+        optional: true
+      svgo:
+        optional: true
+      terser:
+        optional: true
+      uncss:
+        optional: true
 
   htmlparser2@10.0.0:
     resolution: {integrity: sha512-TwAZM+zE5Tq3lrEHvOlvwgj1XLWQCtaaibSN11Q+gGBAS7Y1uZSWwXXRe4iF6OXnaq1riyQAPFOBtYc77Mxq0g==}
@@ -3101,6 +3140,27 @@ snapshots:
       - '@parcel/core'
       - napi-wasm
 
+  '@parcel/optimizer-htmlnano@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))(postcss@8.5.6)(typescript@5.9.3)':
+    dependencies:
+      '@parcel/diagnostic': 2.16.3
+      '@parcel/plugin': 2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))
+      '@parcel/utils': 2.16.3
+      htmlnano: 2.1.5(postcss@8.5.6)(typescript@5.9.3)
+      nullthrows: 1.1.1
+      posthtml: 0.16.7
+    transitivePeerDependencies:
+      - '@parcel/core'
+      - cssnano
+      - napi-wasm
+      - postcss
+      - purgecss
+      - relateurl
+      - srcset
+      - svgo
+      - terser
+      - typescript
+      - uncss
+
   '@parcel/optimizer-image@2.16.3(@parcel/core@2.16.3(@swc/helpers@0.5.18))':
     dependencies:
       '@parcel/core': 2.16.3(@swc/helpers@0.5.18)
@@ -3653,6 +3713,8 @@ snapshots:
   '@types/react@19.2.7':
     dependencies:
       csstype: 3.2.3
+
+  '@types/relateurl@0.2.33': {}
 
   a-sync-waterfall@1.0.1: {}
 
@@ -4213,6 +4275,16 @@ snapshots:
   hookified@1.14.0: {}
 
   html-tags@3.3.1: {}
+
+  htmlnano@2.1.5(postcss@8.5.6)(typescript@5.9.3):
+    dependencies:
+      '@types/relateurl': 0.2.33
+      cosmiconfig: 9.0.0(typescript@5.9.3)
+      posthtml: 0.16.7
+    optionalDependencies:
+      postcss: 8.5.6
+    transitivePeerDependencies:
+      - typescript
 
   htmlparser2@10.0.0:
     dependencies:

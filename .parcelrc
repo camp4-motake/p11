@@ -2,5 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/lukaw3d/parcel-bundler-json-schemas/main/config_schema.json",
   "extends": "@parcel/config-default",
   "resolvers": ["@parcel/resolver-glob", "..."],
-  "namers": ["parcel-namer-rewrite"]
+  "namers": ["parcel-namer-rewrite"],
+  "optimizers": {
+    "**/index.html": ["@parcel/optimizer-htmlnano"],
+    "*.html": []
+  }
 }
