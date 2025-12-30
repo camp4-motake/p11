@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const distDir = path.join(__dirname, '../dist');
 
-async function generateHash(filePath) {
+async function generateHash(filePath: string) {
   try {
     const fileBuffer = await fs.readFile(filePath);
     const hashSum = crypto.createHash('md5');
@@ -21,7 +21,7 @@ async function generateHash(filePath) {
   }
 }
 
-async function addHashToPath(filePath, attrPath) {
+async function addHashToPath(filePath: string, attrPath: string) {
   if (attrPath && !attrPath.startsWith('http')) {
     const fullPath = path.join(path.dirname(filePath), attrPath);
     const hash = await generateHash(fullPath);
@@ -30,23 +30,23 @@ async function addHashToPath(filePath, attrPath) {
   return attrPath;
 }
 
-async function processHtmlFile(filePath) {
+async function processHtmlFile(filePath: string) {
   const html = await fs.readFile(filePath, 'utf-8');
   const $ = cheerio.load(html);
 
   for (const elem of $('link[rel="stylesheet"]')) {
     const href = $(elem).attr('href');
-    $(elem).attr('href', await addHashToPath(filePath, href));
+    $(elem).attr('href', await addHashToPath(filePath, href || ''));
   }
 
   for (const elem of $('script[src]')) {
     const src = $(elem).attr('src');
-    $(elem).attr('src', await addHashToPath(filePath, src));
+    $(elem).attr('src', await addHashToPath(filePath, src || ''));
   }
 
   for (const elem of $('img[src]')) {
     const src = $(elem).attr('src');
-    $(elem).attr('src', await addHashToPath(filePath, src));
+    $(elem).attr('src', await addHashToPath(filePath, src || ''));
   }
 
   for (const elem of $('source')) {
